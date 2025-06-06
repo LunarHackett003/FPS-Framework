@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 988576cebafbde7428ddcc24b76e3ed6, type: 3}
+  m_Name: B93R_AnimSet
+  m_EditorClassIdentifier: 
+  clips:
+  - targetClip: {fileID: 7400000, guid: 438cf89d5892ee2448206251db20dda8, type: 2}
+    characterClip: {fileID: 7400000, guid: 4c5ae5ad18b48c541804bfa6e50e6b4a, type: 2}
+    weaponClip: {fileID: 7400000, guid: 6c68213804f455a4393241623dfb71b3, type: 2}
+  - targetClip: {fileID: 7400000, guid: 1de0b8596ccd1e041b82905acbcbaa08, type: 2}
+    characterClip: {fileID: 7400000, guid: 1834985205fa62e4e9c3a9277d82a200, type: 2}
+    weaponClip: {fileID: 7400000, guid: 230617aaea9ae5a49b36dfc581aa6532, type: 2}
+  - targetClip: {fileID: 7400000, guid: b4dd95253c670e9428e605b16017d173, type: 2}
+    characterClip: {fileID: 7400000, guid: 2018ed50c42af7f4589bac62369aa11e, type: 2}
+    weaponClip: {fileID: 0}
+  - targetClip: {fileID: 7400000, guid: d3939dcd22008324ab3fa261ace3e098, type: 2}
+    characterClip: {fileID: 7400000, guid: 8c722e1a1b987194d935677870debf29, type: 2}
+    weaponClip: {fileID: 7400000, guid: d2beefb1920d55c45839f8fd7e1c603b, type: 2}
+  - targetClip: {fileID: 7400000, guid: 7ab4f5402fd260e4f9e720d295a5f048, type: 2}
+    characterClip: {fileID: 7400000, guid: 19d44bed3fcc8334b875756adb8b24c6, type: 2}
+    weaponClip: {fileID: 7400000, guid: 0c3afb1869f9fa248a0dad9c4b7ef6cb, type: 2}
+  - targetClip: {fileID: 7400000, guid: d4ccb8e53f7b6514db0225cb030cabf6, type: 2}
+    characterClip: {fileID: 7400000, guid: 0c916f4b07fb42349937a07955ddb826, type: 2}
+    weaponClip: {fileID: 7400000, guid: e9ff55bf8f7bfe64ea992c373b0ca186, type: 2}

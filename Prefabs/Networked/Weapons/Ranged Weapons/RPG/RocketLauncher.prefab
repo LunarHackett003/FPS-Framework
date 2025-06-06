@@ -1,0 +1,1414 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1467601009264149304
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4490385423063287825}
+  m_Layer: 0
+  m_Name: FireOrigin
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4490385423063287825
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1467601009264149304}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.064, z: 0.299}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1206421350014060510}
+  m_Father: {fileID: 8550564866836600008}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2673746016426126586
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3983777234619615731}
+  - component: {fileID: 1180785279069531547}
+  - component: {fileID: 5650380938510493665}
+  - component: {fileID: 1914858996195424049}
+  m_Layer: 0
+  m_Name: RocketFireVFX
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3983777234619615731
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2673746016426126586}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1206421350014060510}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+--- !u!2083052967 &1180785279069531547
+VisualEffect:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2673746016426126586}
+  m_Enabled: 1
+  m_Asset: {fileID: 8926484042661614526, guid: f1b80884d96e11c40b66bcb866dd2abb, type: 3}
+  m_InitialEventName: 
+  m_InitialEventNameOverriden: 1
+  m_StartSeed: 0
+  m_ResetSeedOnPlay: 1
+  m_AllowInstancing: 1
+  m_ResourceVersion: 1
+  m_PropertySheet:
+    m_Float:
+      m_Array:
+      - m_Value: 1
+        m_Name: SmokeDrag
+        m_Overridden: 1
+      - m_Value: 0.2
+        m_Name: FlameGravity
+        m_Overridden: 1
+      - m_Value: 1500
+        m_Name: DebrisDrag
+        m_Overridden: 1
+      - m_Value: 2
+        m_Name: FlameDrag
+        m_Overridden: 1
+      - m_Value: 0.2
+        m_Name: DebrisSize
+        m_Overridden: 1
+      - m_Value: 0.4
+        m_Name: FlameSize
+        m_Overridden: 1
+      - m_Value: 0.4
+        m_Name: SmokeSize
+        m_Overridden: 1
+      - m_Value: 1
+        m_Name: DebrisGravity
+        m_Overridden: 1
+      - m_Value: 1
+        m_Name: FlameOffshootSize
+        m_Overridden: 1
+      - m_Value: 0.5
+        m_Name: FlameOffshootDrag
+        m_Overridden: 1
+      - m_Value: 0.1
+        m_Name: FlameOffshootGravity
+        m_Overridden: 1
+      - m_Value: 0
+        m_Name: FlameOffshootRate
+        m_Overridden: 1
+    m_Vector2f:
+      m_Array:
+      - m_Value: {x: 0.3, y: 1.4}
+        m_Name: SmokeLifetime
+        m_Overridden: 1
+      - m_Value: {x: 15, y: 25}
+        m_Name: FlameCount
+        m_Overridden: 1
+      - m_Value: {x: 0.5, y: 0.9}
+        m_Name: FlameLifetime
+        m_Overridden: 1
+      - m_Value: {x: 0, y: 0}
+        m_Name: DebrisCount
+        m_Overridden: 1
+      - m_Value: {x: 0.3, y: 0.5}
+        m_Name: FlameOffshootLifetime
+        m_Overridden: 1
+      - m_Value: {x: 0.1, y: 0.9}
+        m_Name: FlameOffshootVelocityMultiplier
+        m_Overridden: 1
+      - m_Value: {x: 5, y: 15}
+        m_Name: FlameOffshootRate
+        m_Overridden: 1
+      - m_Value: {x: 5, y: 8}
+        m_Name: SmokeCount
+        m_Overridden: 1
+    m_Vector3f:
+      m_Array:
+      - m_Value: {x: 1, y: 3, z: 1}
+        m_Name: SmokeMaxVelocity
+        m_Overridden: 1
+      - m_Value: {x: -1, y: 1, z: -1}
+        m_Name: SmokeMinVelocity
+        m_Overridden: 1
+      - m_Value: {x: -1, y: 4, z: -1}
+        m_Name: FlameMinVelocity
+        m_Overridden: 1
+      - m_Value: {x: 1, y: 5, z: 1}
+        m_Name: FlameMaxVelocity
+        m_Overridden: 1
+      - m_Value: {x: 5, y: 5, z: 5}
+        m_Name: DebrisMaxVelocity
+        m_Overridden: 1
+    m_Vector4f:
+      m_Array:
+      - m_Value: {x: 0.05660379, y: 0.04034531, z: 0.037112862, w: 0}
+        m_Name: SmokeColourB
+        m_Overridden: 1
+      - m_Value: {x: 0.047169805, y: 0.042052325, z: 0.042052325, w: 0.2}
+        m_Name: SmokeColourA
+        m_Overridden: 1
+      - m_Value: {x: 23.968628, y: 2.0242221, z: 0, w: 0}
+        m_Name: FlameColourA
+        m_Overridden: 1
+      - m_Value: {x: 23.968628, y: 0.000005428838, z: 0, w: 0}
+        m_Name: FlameColourB
+        m_Overridden: 1
+    m_Uint:
+      m_Array: []
+    m_Int:
+      m_Array: []
+    m_Matrix4x4f:
+      m_Array: []
+    m_AnimationCurve:
+      m_Array:
+      - m_Value:
+          serializedVersion: 2
+          m_Curve:
+          - serializedVersion: 3
+            time: 0
+            value: 0
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          - serializedVersion: 3
+            time: 0.16847229
+            value: 0.5117912
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          - serializedVersion: 3
+            time: 1
+            value: 0
+            inSlope: -1.8950698
+            outSlope: -1.8950698
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0.02144771
+            outWeight: 0
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        m_Name: FlameSizeOverLife
+        m_Overridden: 1
+      - m_Value:
+          serializedVersion: 2
+          m_Curve:
+          - serializedVersion: 3
+            time: 0
+            value: 0.0059217215
+            inSlope: 1.9135156
+            outSlope: 1.9135156
+            tangentMode: 34
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0.33333334
+          - serializedVersion: 3
+            time: 0.20042193
+            value: 0.3894322
+            inSlope: 0.006262137
+            outSlope: 0.006262137
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0.10067451
+          - serializedVersion: 3
+            time: 0.98457754
+            value: 0.10898323
+            inSlope: -0.79805326
+            outSlope: -0.79805326
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0.07153858
+            outWeight: 0
+          - serializedVersion: 3
+            time: 1
+            value: 0
+            inSlope: -5.962815
+            outSlope: -5.962815
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0.8259915
+            outWeight: 0
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        m_Name: SmokeSizeOverLife
+        m_Overridden: 1
+      - m_Value:
+          serializedVersion: 2
+          m_Curve:
+          - serializedVersion: 3
+            time: 0
+            value: 1
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          - serializedVersion: 3
+            time: 1
+            value: 0
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        m_Name: FlameOffshootSizeOverLife
+        m_Overridden: 1
+    m_Gradient:
+      m_Array:
+      - m_Value:
+          serializedVersion: 2
+          key0: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+          key1: {r: 0.5, g: 0.5, b: 0.5, a: 0.8509804}
+          key2: {r: 0, g: 0, b: 0, a: 0}
+          key3: {r: 0, g: 0, b: 0, a: 0}
+          key4: {r: 0, g: 0, b: 0, a: 0}
+          key5: {r: 0, g: 0, b: 0, a: 0}
+          key6: {r: 0, g: 0, b: 0, a: 0}
+          key7: {r: 0, g: 0, b: 0, a: 0}
+          ctime0: 0
+          ctime1: 65535
+          ctime2: 0
+          ctime3: 0
+          ctime4: 0
+          ctime5: 0
+          ctime6: 0
+          ctime7: 0
+          atime0: 18669
+          atime1: 49785
+          atime2: 65535
+          atime3: 65535
+          atime4: 65535
+          atime5: 0
+          atime6: 0
+          atime7: 0
+          m_Mode: 0
+          m_ColorSpace: 1
+          m_NumColorKeys: 2
+          m_NumAlphaKeys: 3
+        m_Name: SmokeColourOverLife
+        m_Overridden: 1
+      - m_Value:
+          serializedVersion: 2
+          key0: {r: 0.19486724, g: 0.040809892, b: 0, a: 0}
+          key1: {r: 0, g: 0, b: 0, a: 1}
+          key2: {r: 0, g: 0, b: 0, a: 0.8}
+          key3: {r: 0, g: 0, b: 0, a: 0}
+          key4: {r: 0, g: 0, b: 0, a: 0}
+          key5: {r: 0, g: 0, b: 0, a: 0}
+          key6: {r: 0, g: 0, b: 0, a: 0}
+          key7: {r: 0, g: 0, b: 0, a: 0}
+          ctime0: 0
+          ctime1: 65535
+          ctime2: 0
+          ctime3: 0
+          ctime4: 0
+          ctime5: 0
+          ctime6: 0
+          ctime7: 0
+          atime0: 0
+          atime1: 24047
+          atime2: 43562
+          atime3: 65535
+          atime4: 0
+          atime5: 0
+          atime6: 0
+          atime7: 0
+          m_Mode: 2
+          m_ColorSpace: 1
+          m_NumColorKeys: 2
+          m_NumAlphaKeys: 4
+        m_Name: FlameOffshootColorOverLife
+        m_Overridden: 1
+      - m_Value:
+          serializedVersion: 2
+          key0: {r: 1, g: 1, b: 1, a: 0}
+          key1: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+          key2: {r: 0, g: 0, b: 0, a: 0.8}
+          key3: {r: 0, g: 0, b: 0, a: 0}
+          key4: {r: 0, g: 0, b: 0, a: 0}
+          key5: {r: 0, g: 0, b: 0, a: 0}
+          key6: {r: 0, g: 0, b: 0, a: 0}
+          key7: {r: 0, g: 0, b: 0, a: 0}
+          ctime0: 0
+          ctime1: 65535
+          ctime2: 0
+          ctime3: 0
+          ctime4: 0
+          ctime5: 0
+          ctime6: 0
+          ctime7: 0
+          atime0: 6300
+          atime1: 9834
+          atime2: 52428
+          atime3: 65535
+          atime4: 0
+          atime5: 0
+          atime6: 0
+          atime7: 0
+          m_Mode: 0
+          m_ColorSpace: 1
+          m_NumColorKeys: 2
+          m_NumAlphaKeys: 4
+        m_Name: FlameColourOverLife
+        m_Overridden: 1
+    m_NamedObject:
+      m_Array: []
+    m_Bool:
+      m_Array: []
+--- !u!73398921 &5650380938510493665
+VFXRenderer:
+  serializedVersion: 1
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2673746016426126586}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 0
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!114 &1914858996195424049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2673746016426126586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c057af5c9d311947995a90384b2f90b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ownerLayerIndex: 12
+  remoteLayerIndex: 0
+--- !u!1 &6952577704456900160
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8227708224519793481}
+  - component: {fileID: 3983977032958354673}
+  - component: {fileID: 796476081909253467}
+  - component: {fileID: 4655011314172396272}
+  m_Layer: 0
+  m_Name: RocketFireVFX (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8227708224519793481
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6952577704456900160}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.000000026524768, y: -0.00000008940697, z: -1, w: 0.00000006830568}
+  m_LocalPosition: {x: 0, y: -1.013, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1206421350014060510}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -180}
+--- !u!2083052967 &3983977032958354673
+VisualEffect:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6952577704456900160}
+  m_Enabled: 1
+  m_Asset: {fileID: 8926484042661614526, guid: f1b80884d96e11c40b66bcb866dd2abb, type: 3}
+  m_InitialEventName: 
+  m_InitialEventNameOverriden: 1
+  m_StartSeed: 0
+  m_ResetSeedOnPlay: 1
+  m_AllowInstancing: 1
+  m_ResourceVersion: 1
+  m_PropertySheet:
+    m_Float:
+      m_Array:
+      - m_Value: 2
+        m_Name: SmokeDrag
+        m_Overridden: 1
+      - m_Value: 0.2
+        m_Name: FlameGravity
+        m_Overridden: 1
+      - m_Value: 1500
+        m_Name: DebrisDrag
+        m_Overridden: 1
+      - m_Value: 2
+        m_Name: FlameDrag
+        m_Overridden: 1
+      - m_Value: 0.2
+        m_Name: DebrisSize
+        m_Overridden: 1
+      - m_Value: 0.2
+        m_Name: FlameSize
+        m_Overridden: 1
+      - m_Value: 0.2
+        m_Name: SmokeSize
+        m_Overridden: 1
+      - m_Value: 1
+        m_Name: DebrisGravity
+        m_Overridden: 1
+      - m_Value: 1
+        m_Name: FlameOffshootSize
+        m_Overridden: 1
+      - m_Value: 0.5
+        m_Name: FlameOffshootDrag
+        m_Overridden: 1
+      - m_Value: 0.1
+        m_Name: FlameOffshootGravity
+        m_Overridden: 1
+      - m_Value: 0
+        m_Name: FlameOffshootRate
+        m_Overridden: 1
+    m_Vector2f:
+      m_Array:
+      - m_Value: {x: 0.3, y: 1.4}
+        m_Name: SmokeLifetime
+        m_Overridden: 1
+      - m_Value: {x: 15, y: 25}
+        m_Name: FlameCount
+        m_Overridden: 1
+      - m_Value: {x: 0.3, y: 0.5}
+        m_Name: FlameLifetime
+        m_Overridden: 1
+      - m_Value: {x: 0, y: 0}
+        m_Name: DebrisCount
+        m_Overridden: 1
+      - m_Value: {x: 0.3, y: 0.5}
+        m_Name: FlameOffshootLifetime
+        m_Overridden: 1
+      - m_Value: {x: 0.1, y: 0.9}
+        m_Name: FlameOffshootVelocityMultiplier
+        m_Overridden: 1
+      - m_Value: {x: 5, y: 15}
+        m_Name: FlameOffshootRate
+        m_Overridden: 1
+      - m_Value: {x: 5, y: 8}
+        m_Name: SmokeCount
+        m_Overridden: 1
+    m_Vector3f:
+      m_Array:
+      - m_Value: {x: 1, y: 3, z: 1}
+        m_Name: SmokeMaxVelocity
+        m_Overridden: 1
+      - m_Value: {x: -1, y: 1, z: -1}
+        m_Name: SmokeMinVelocity
+        m_Overridden: 1
+      - m_Value: {x: -1, y: 4, z: -1}
+        m_Name: FlameMinVelocity
+        m_Overridden: 1
+      - m_Value: {x: 1, y: 5, z: 1}
+        m_Name: FlameMaxVelocity
+        m_Overridden: 1
+      - m_Value: {x: 5, y: 5, z: 5}
+        m_Name: DebrisMaxVelocity
+        m_Overridden: 1
+    m_Vector4f:
+      m_Array:
+      - m_Value: {x: 0.05660379, y: 0.04034531, z: 0.037112862, w: 0}
+        m_Name: SmokeColourB
+        m_Overridden: 1
+      - m_Value: {x: 0.047169805, y: 0.042052325, z: 0.042052325, w: 0.2}
+        m_Name: SmokeColourA
+        m_Overridden: 1
+      - m_Value: {x: 23.968628, y: 2.0242221, z: 0, w: 0}
+        m_Name: FlameColourA
+        m_Overridden: 1
+      - m_Value: {x: 23.968628, y: 0.000005428838, z: 0, w: 0}
+        m_Name: FlameColourB
+        m_Overridden: 1
+    m_Uint:
+      m_Array: []
+    m_Int:
+      m_Array: []
+    m_Matrix4x4f:
+      m_Array: []
+    m_AnimationCurve:
+      m_Array:
+      - m_Value:
+          serializedVersion: 2
+          m_Curve:
+          - serializedVersion: 3
+            time: 0
+            value: 0
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          - serializedVersion: 3
+            time: 0.16847229
+            value: 0.5117912
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          - serializedVersion: 3
+            time: 1
+            value: 0
+            inSlope: -1.8950698
+            outSlope: -1.8950698
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0.02144771
+            outWeight: 0
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        m_Name: FlameSizeOverLife
+        m_Overridden: 1
+      - m_Value:
+          serializedVersion: 2
+          m_Curve:
+          - serializedVersion: 3
+            time: 0
+            value: 0.0059217215
+            inSlope: 1.9135156
+            outSlope: 1.9135156
+            tangentMode: 34
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0.33333334
+          - serializedVersion: 3
+            time: 0.20042193
+            value: 0.3894322
+            inSlope: 0.006262137
+            outSlope: 0.006262137
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0.10067451
+          - serializedVersion: 3
+            time: 0.98457754
+            value: 0.10898323
+            inSlope: -0.79805326
+            outSlope: -0.79805326
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0.07153858
+            outWeight: 0
+          - serializedVersion: 3
+            time: 1
+            value: 0
+            inSlope: -5.962815
+            outSlope: -5.962815
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0.8259915
+            outWeight: 0
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        m_Name: SmokeSizeOverLife
+        m_Overridden: 1
+      - m_Value:
+          serializedVersion: 2
+          m_Curve:
+          - serializedVersion: 3
+            time: 0
+            value: 1
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          - serializedVersion: 3
+            time: 1
+            value: 0
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        m_Name: FlameOffshootSizeOverLife
+        m_Overridden: 1
+    m_Gradient:
+      m_Array:
+      - m_Value:
+          serializedVersion: 2
+          key0: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+          key1: {r: 0.5, g: 0.5, b: 0.5, a: 0.8509804}
+          key2: {r: 0, g: 0, b: 0, a: 0}
+          key3: {r: 0, g: 0, b: 0, a: 0}
+          key4: {r: 0, g: 0, b: 0, a: 0}
+          key5: {r: 0, g: 0, b: 0, a: 0}
+          key6: {r: 0, g: 0, b: 0, a: 0}
+          key7: {r: 0, g: 0, b: 0, a: 0}
+          ctime0: 0
+          ctime1: 65535
+          ctime2: 0
+          ctime3: 0
+          ctime4: 0
+          ctime5: 0
+          ctime6: 0
+          ctime7: 0
+          atime0: 18669
+          atime1: 49785
+          atime2: 65535
+          atime3: 65535
+          atime4: 65535
+          atime5: 0
+          atime6: 0
+          atime7: 0
+          m_Mode: 0
+          m_ColorSpace: 1
+          m_NumColorKeys: 2
+          m_NumAlphaKeys: 3
+        m_Name: SmokeColourOverLife
+        m_Overridden: 1
+      - m_Value:
+          serializedVersion: 2
+          key0: {r: 0.19486724, g: 0.040809892, b: 0, a: 0}
+          key1: {r: 0, g: 0, b: 0, a: 1}
+          key2: {r: 0, g: 0, b: 0, a: 0.8}
+          key3: {r: 0, g: 0, b: 0, a: 0}
+          key4: {r: 0, g: 0, b: 0, a: 0}
+          key5: {r: 0, g: 0, b: 0, a: 0}
+          key6: {r: 0, g: 0, b: 0, a: 0}
+          key7: {r: 0, g: 0, b: 0, a: 0}
+          ctime0: 0
+          ctime1: 65535
+          ctime2: 0
+          ctime3: 0
+          ctime4: 0
+          ctime5: 0
+          ctime6: 0
+          ctime7: 0
+          atime0: 0
+          atime1: 24047
+          atime2: 43562
+          atime3: 65535
+          atime4: 0
+          atime5: 0
+          atime6: 0
+          atime7: 0
+          m_Mode: 2
+          m_ColorSpace: 1
+          m_NumColorKeys: 2
+          m_NumAlphaKeys: 4
+        m_Name: FlameOffshootColorOverLife
+        m_Overridden: 1
+      - m_Value:
+          serializedVersion: 2
+          key0: {r: 1, g: 1, b: 1, a: 0}
+          key1: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+          key2: {r: 0, g: 0, b: 0, a: 0.8}
+          key3: {r: 0, g: 0, b: 0, a: 0}
+          key4: {r: 0, g: 0, b: 0, a: 0}
+          key5: {r: 0, g: 0, b: 0, a: 0}
+          key6: {r: 0, g: 0, b: 0, a: 0}
+          key7: {r: 0, g: 0, b: 0, a: 0}
+          ctime0: 0
+          ctime1: 65535
+          ctime2: 0
+          ctime3: 0
+          ctime4: 0
+          ctime5: 0
+          ctime6: 0
+          ctime7: 0
+          atime0: 6300
+          atime1: 9834
+          atime2: 52428
+          atime3: 65535
+          atime4: 0
+          atime5: 0
+          atime6: 0
+          atime7: 0
+          m_Mode: 0
+          m_ColorSpace: 1
+          m_NumColorKeys: 2
+          m_NumAlphaKeys: 4
+        m_Name: FlameColourOverLife
+        m_Overridden: 1
+    m_NamedObject:
+      m_Array: []
+    m_Bool:
+      m_Array: []
+--- !u!73398921 &796476081909253467
+VFXRenderer:
+  serializedVersion: 1
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6952577704456900160}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 0
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!114 &4655011314172396272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6952577704456900160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c057af5c9d311947995a90384b2f90b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ownerLayerIndex: 12
+  remoteLayerIndex: 0
+--- !u!1 &8572611118650520866
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1206421350014060510}
+  - component: {fileID: 5153413967624332292}
+  m_Layer: 0
+  m_Name: RPG_BackBlast
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1206421350014060510
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8572611118650520866}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.7071069, y: -0, z: -0, w: 0.7071067}
+  m_LocalPosition: {x: 0, y: 0, z: -1.078}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 3983777234619615731}
+  - {fileID: 8227708224519793481}
+  m_Father: {fileID: 4490385423063287825}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5153413967624332292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8572611118650520866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b15147c05142724a855dc700d9783d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explodeOnSpawn: 0
+  visualEffects:
+  - {fileID: 1180785279069531547}
+  - {fileID: 3983977032958354673}
+  blastRadius: 0.3
+  blastFalloff:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  damagePointBlank: -10
+  damageAtEdge: 0
+  forcePointBlank: 50
+  forceAtEdge: 0
+  blastMask:
+    serializedVersion: 2
+    m_Bits: 65
+  doExplosion: 1
+  maxHits: 10
+  rayCount: 10
+  useLimitedAngle: 1
+  blastBaseDirection: {x: 0, y: 1, z: 0}
+  blastAngle: 23.7
+  canDamageFriendlies: 0
+  damageSourceType: 1
+  despawnAfterExplosion: 0
+  explodeDespawnTime: 0
+--- !u!1001 &8152373000210379555
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: c1d8dde8b497f6f47b63e8be7b285263,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -8.387
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c1d8dde8b497f6f47b63e8be7b285263,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.345
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c1d8dde8b497f6f47b63e8be7b285263,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.728
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c1d8dde8b497f6f47b63e8be7b285263,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c1d8dde8b497f6f47b63e8be7b285263,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c1d8dde8b497f6f47b63e8be7b285263,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c1d8dde8b497f6f47b63e8be7b285263,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c1d8dde8b497f6f47b63e8be7b285263,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c1d8dde8b497f6f47b63e8be7b285263,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c1d8dde8b497f6f47b63e8be7b285263,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -6258214356145708481, guid: c1d8dde8b497f6f47b63e8be7b285263,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 15.197876
+      objectReference: {fileID: 0}
+    - target: {fileID: -6258214356145708481, guid: c1d8dde8b497f6f47b63e8be7b285263,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 121.492035
+      objectReference: {fileID: 0}
+    - target: {fileID: -6258214356145708481, guid: c1d8dde8b497f6f47b63e8be7b285263,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -79.30915
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c1d8dde8b497f6f47b63e8be7b285263,
+        type: 3}
+      propertyPath: m_Name
+      value: RocketLauncher
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c1d8dde8b497f6f47b63e8be7b285263,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: c1d8dde8b497f6f47b63e8be7b285263,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 9feec7067770cd340a1ed9157a53e303, type: 2}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: c1d8dde8b497f6f47b63e8be7b285263,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4490385423063287825}
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c1d8dde8b497f6f47b63e8be7b285263,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5155995223863041425}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c1d8dde8b497f6f47b63e8be7b285263,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5914302703086182660}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c1d8dde8b497f6f47b63e8be7b285263,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3892073070634034066}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c1d8dde8b497f6f47b63e8be7b285263,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7154522786074392701}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c1d8dde8b497f6f47b63e8be7b285263,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4728665842400485727}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c1d8dde8b497f6f47b63e8be7b285263,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1106504002716589549}
+    - targetCorrespondingSourceObject: {fileID: 2186015314734095194, guid: c1d8dde8b497f6f47b63e8be7b285263,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8648148593578116326}
+    - targetCorrespondingSourceObject: {fileID: 2186015314734095194, guid: c1d8dde8b497f6f47b63e8be7b285263,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7640702282280495684}
+    - targetCorrespondingSourceObject: {fileID: -5568371526223589888, guid: c1d8dde8b497f6f47b63e8be7b285263,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5651895564722358337}
+  m_SourcePrefab: {fileID: 100100000, guid: c1d8dde8b497f6f47b63e8be7b285263, type: 3}
+--- !u!95 &2326559616626249394 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: c1d8dde8b497f6f47b63e8be7b285263,
+    type: 3}
+  m_PrefabInstance: {fileID: 8152373000210379555}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &4871249470006590755 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -5568371526223589888, guid: c1d8dde8b497f6f47b63e8be7b285263,
+    type: 3}
+  m_PrefabInstance: {fileID: 8152373000210379555}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5651895564722358337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4871249470006590755}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c057af5c9d311947995a90384b2f90b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ownerLayerIndex: 6
+  remoteLayerIndex: 0
+--- !u!1 &8031401738475694201 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2186015314734095194, guid: c1d8dde8b497f6f47b63e8be7b285263,
+    type: 3}
+  m_PrefabInstance: {fileID: 8152373000210379555}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8648148593578116326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8031401738475694201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c057af5c9d311947995a90384b2f90b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ownerLayerIndex: 6
+  remoteLayerIndex: 0
+--- !u!114 &7640702282280495684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8031401738475694201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 876e84d91264d3f488a58215d6164192, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scales:
+  - {x: 0, y: 0, z: 0}
+  - {x: 1, y: 1, z: 1}
+--- !u!4 &8550564866836600008 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: c1d8dde8b497f6f47b63e8be7b285263,
+    type: 3}
+  m_PrefabInstance: {fileID: 8152373000210379555}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &9070924599709617778 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: c1d8dde8b497f6f47b63e8be7b285263,
+    type: 3}
+  m_PrefabInstance: {fileID: 8152373000210379555}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5155995223863041425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9070924599709617778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 1998122467
+  InScenePlacedSourceGlobalObjectIdHash: 3482293842
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 1
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
+--- !u!114 &5914302703086182660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9070924599709617778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2373818f8c7e30d4e89f17ad35a31d0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  displayName: RPG
+  weaponIcon: {fileID: -887667588428244941, guid: 4129dceec84025149bf41ddf90eaf00a,
+    type: 3}
+  animationSet: {fileID: 11400000, guid: d43f8ba1acc143e4996f1aa88064f025, type: 2}
+  controller: {fileID: 0}
+  animator: {fileID: 3892073070634034066}
+  canCrit: 1
+  critMultiplier: 2
+  aimParams: {fileID: 11400000, guid: 77181dc5ea5ca2849891f6a70d787271, type: 2}
+  crosshairSpreadBase: 1
+  crosshairSpreadMax: 1.5
+  hideCrosshairWhenAiming: 1
+  useAttackSpread: 1
+  spreadOnPrimary: 0
+  spreadOnSecondary: 0
+  attackSpreadIncrement: 1
+  attackSpreadDecay: 1
+  baseAttackSpread: 0.1
+  attackSpreadAmount: 0
+  useAmmunition: 1
+  ammoConsumeOnPrimary: 1
+  ammoConsumeOnSecondary: 0
+  maxAmmo: 1
+  ammoPerShot: 1
+  CurrentAmmo:
+    m_InternalValue: 0
+  useAmmoPhases: 0
+  ammoPhases: 0
+  currentAmmoPhase: 0
+  partialReloadTime: 2
+  emptyReloadTime: 2
+  hasReloadAnimation: 1
+  useEquipmentRecharge: 1
+  equipmentRechargeTime: 2
+  replenishAllEquipmentCharges: 0
+  equipmentChargeFillsAmmo: 0
+  equipmentCharges:
+    m_InternalValue: 1
+  equipmentChargeCapacity: 1
+  equipmentChargesRefilled: 1
+  queuedReloadAnimation: 0
+  fired: 0
+  primaryUsesCharge: 0
+  secondaryUsesCharge: 0
+  chargeRate: 0
+  chargeDecayRate: 0
+  minimumChargeToFire: 0
+  resetChargeOnFire: 0
+  chargeAmount: 0
+  chargeUntilFire: 0
+  chargeOnlyUntilMinimum: 0
+  fireOnRelease: 0
+  charging: 0
+  recoilParams: {fileID: 11400000, guid: bdd5dec6794a68d4ea8c989aebcfc910, type: 2}
+  poolStartCapacity: 50
+  poolMaxCapacity: 500
+  damageConfig: {fileID: 11400000, guid: 8fafd6135f529384bb5667b61a0b1c17, type: 2}
+  baseSpreadPerUnit: 0.1
+  maxInfluencedSpreadPerUnit: 0.1
+  currentMovementInfluence: 0
+  allowedFireModes: 02000000
+  fireModeIndex: 0
+  fireModeSwitchTime: 0
+  roundsPerMinute: 120
+  roundsInBurst: 1
+  timeBetweenRounds: 0.5
+  debugdisplay_truetime: 0
+  burstCooldown: 0
+  autoBurst: 1
+  chargeAffectsFireRate: 0
+  minChargeFireRateMultiplier: 0.4
+  maxChargeFireRateMultiplier: 1
+  minChargeDamageMultiplier: 0.2
+  maxChargeDamageMultiplier: 0.2
+  currentFireCooldown: 0
+  fireOrigin: {fileID: 4490385423063287825}
+  fireIterations: 1
+  ProjectilePrefab: {fileID: 998377066548516954, guid: df2116d0acf67ef42a18791000d18a7d,
+    type: 3}
+--- !u!114 &3892073070634034066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9070924599709617778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1045384fa00138840b02555c1abdff1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 2326559616626249394}
+  networkAnimator: {fileID: 7154522786074392701}
+  controller: {fileID: 0}
+  weapon: {fileID: 5914302703086182660}
+  isWeapon: 1
+--- !u!114 &7154522786074392701
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9070924599709617778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0ade3a55cfbdfa438939768e2ee898c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TransitionStateInfoList:
+  - IsCrossFadeExit: 0
+    Layer: 0
+    OriginatingState: -118708495
+    DestinationState: 1562257414
+    TransitionDuration: 0.065812886
+    TriggerNameHash: 1562257414
+    TransitionIndex: 1
+  - IsCrossFadeExit: 0
+    Layer: 0
+    OriginatingState: -118708495
+    DestinationState: 1159952127
+    TransitionDuration: 0.30583507
+    TriggerNameHash: -1047320328
+    TransitionIndex: 2
+  - IsCrossFadeExit: 0
+    Layer: 0
+    OriginatingState: 2081823275
+    DestinationState: 2071894089
+    TransitionDuration: 0.065812886
+    TriggerNameHash: 2071894089
+    TransitionIndex: 0
+  - IsCrossFadeExit: 0
+    Layer: 0
+    OriginatingState: 2081823275
+    DestinationState: 1562257414
+    TransitionDuration: 0.065812886
+    TriggerNameHash: 1562257414
+    TransitionIndex: 1
+  - IsCrossFadeExit: 0
+    Layer: 0
+    OriginatingState: 2081823275
+    DestinationState: 1159952127
+    TransitionDuration: 0.19881755
+    TriggerNameHash: -1047320328
+    TransitionIndex: 3
+  - IsCrossFadeExit: 0
+    Layer: 0
+    OriginatingState: 613635489
+    DestinationState: -193380071
+    TransitionDuration: 0.05307722
+    TriggerNameHash: -1907200461
+    TransitionIndex: 1
+  - IsCrossFadeExit: 0
+    Layer: 0
+    OriginatingState: 1029937312
+    DestinationState: -193380071
+    TransitionDuration: 0.1351285
+    TriggerNameHash: -1907200461
+    TransitionIndex: 0
+  m_Animator: {fileID: 2326559616626249394}
+--- !u!114 &4728665842400485727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9070924599709617778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1335d87071fc82468ef871d97dc89af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapon: {fileID: 5914302703086182660}
+  applyRecoil: 1
+  playFireSound: 1
+  playFireEffects: 1
+  fireEffect: {fileID: 0}
+  fireParticle: {fileID: 0}
+  reloadedEvents:
+    m_PersistentCalls:
+      m_Calls: []
+  firedEvents:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7640702282280495684}
+        m_TargetAssemblyTypeName: WeaponPartScaleEvent, Assembly-CSharp
+        m_MethodName: SetScaleByIndex
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 5153413967624332292}
+        m_TargetAssemblyTypeName: Explosion, Assembly-CSharp
+        m_MethodName: Explode_RPC
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  playReloadSound: 0
+--- !u!114 &1106504002716589549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9070924599709617778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 302949b21c044f44aa883fbcf1e913ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 7640702282280495684}

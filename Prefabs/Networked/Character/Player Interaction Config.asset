@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21e925e5e0114d142be26c2d7dc4ad10, type: 3}
+  m_Name: Player Interaction Config
+  m_EditorClassIdentifier: 
+  maxInteractDistance: 6
+  interactThickness: 0.01
+  interactLayerMask:
+    serializedVersion: 2
+    m_Bits: 2048
+  interactedObjectMoveSpeed: 25
+  interactedObjectRotateSpeed: 25
+  interactRotateUseSlerp: 0
+  canInteractThroughWalls: 0
+  grabbedObjectOffsetFromWeaponPoint: {x: 0.5, y: -0.27, z: 0.74}
+  canInteractWithEnemyItems: 0
+  throwForce: 15

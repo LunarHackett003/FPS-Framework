@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6510e88b43c27114c9c7a2685e9dcc72, type: 3}
+  m_Name: MoveParams
+  m_EditorClassIdentifier: 
+  baseMoveForce: 40
+  walkDamping: 8
+  sprintForceMultiply: 2
+  slowWalkForceMultiply: 0.7
+  aimWalkMoveMultiply: 0.7
+  groundPushForce: 2
+  sideAimWalkMoveMultiply: 0.5
+  crouchWalkForceMultiply: 0.8
+  crouchedCapsuleHeight: 1.2
+  standingCapsuleHeight: 1.9
+  crouchHeadSpeed: 5
+  crouchedCapsuleCentre: {x: 0, y: -0.4, z: 0}
+  standingCapsuleCentre: {x: 0, y: -0.075, z: 0}
+  crouchObstructionDistance: 0.65
+  crouchObstructionVerticalOffset: -0.3
+  uncrouchCheckPosition: {x: 0, y: 0, z: 0}
+  canUncrouch: 1
+  followPlatformPosition: 0
+  followPlatformRotation: 1
+  slideDamping: 1.3
+  slidePushOffForce: 7
+  slideSteerForce: 0.8
+  jumpForce: 5.5
+  airborneDamping: 0.1
+  airMoveForce: 2
+  canMultiJump: 0
+  multiJumps: 2

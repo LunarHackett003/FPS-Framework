@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 988576cebafbde7428ddcc24b76e3ed6, type: 3}
+  m_Name: SGP1212_AnimSet
+  m_EditorClassIdentifier: 
+  clips:
+  - targetClip: {fileID: 7400000, guid: 438cf89d5892ee2448206251db20dda8, type: 2}
+    characterClip: {fileID: 7400000, guid: 5164b1bea67f26840acb042b0b27252d, type: 2}
+    weaponClip: {fileID: 7400000, guid: ced41dd7f0f91c74e9e96e1f5a655cdd, type: 2}
+  - targetClip: {fileID: 7400000, guid: 1de0b8596ccd1e041b82905acbcbaa08, type: 2}
+    characterClip: {fileID: 7400000, guid: d5fc2a2173da5d8489dd2b7e00c6a7a6, type: 2}
+    weaponClip: {fileID: 7400000, guid: d38d7f547d5ed0840bfcc4fd6f11c412, type: 2}
+  - targetClip: {fileID: 7400000, guid: b4dd95253c670e9428e605b16017d173, type: 2}
+    characterClip: {fileID: 7400000, guid: 667d6817890131541b99b1e9b76db0bb, type: 2}
+    weaponClip: {fileID: 7400000, guid: d38d7f547d5ed0840bfcc4fd6f11c412, type: 2}
+  - targetClip: {fileID: 7400000, guid: d3939dcd22008324ab3fa261ace3e098, type: 2}
+    characterClip: {fileID: 7400000, guid: c289146d948e90a4bb1efe9b118b0093, type: 2}
+    weaponClip: {fileID: 7400000, guid: b9f926199fba4d14784980df9cfae489, type: 2}
+  - targetClip: {fileID: 7400000, guid: 7ab4f5402fd260e4f9e720d295a5f048, type: 2}
+    characterClip: {fileID: 7400000, guid: c289146d948e90a4bb1efe9b118b0093, type: 2}
+    weaponClip: {fileID: 7400000, guid: b9f926199fba4d14784980df9cfae489, type: 2}
+  - targetClip: {fileID: 7400000, guid: d4ccb8e53f7b6514db0225cb030cabf6, type: 2}
+    characterClip: {fileID: 7400000, guid: f3b057bca14e0664e93077aed9a7c986, type: 2}
+    weaponClip: {fileID: 7400000, guid: bb4426bf4447e3744916432bbe7e571d, type: 2}
+  - targetClip: {fileID: 7400000, guid: cfd11266d81c8464f94a9551539b84bd, type: 2}
+    characterClip: {fileID: 7400000, guid: c6a291b8739c5fc468161d57bf129d0d, type: 2}
+    weaponClip: {fileID: 7400000, guid: 09e54eeab08157840b232a1c0c9a8e12, type: 2}
+  - targetClip: {fileID: 7400000, guid: f8d1f1e7bdaa1f04ebf12b603908cffd, type: 2}
+    characterClip: {fileID: 7400000, guid: 92a419b238d9e7b47b4962965c21238f, type: 2}
+    weaponClip: {fileID: 7400000, guid: ec54e79eafd18c74395538e1e334a815, type: 2}
