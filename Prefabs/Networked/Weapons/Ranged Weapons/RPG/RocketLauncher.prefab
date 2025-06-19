@@ -1170,7 +1170,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 1998122467
+  GlobalObjectIdHash: 3482293842
   InScenePlacedSourceGlobalObjectIdHash: 3482293842
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
@@ -1224,6 +1224,7 @@ MonoBehaviour:
   emptyReloadTime: 2
   hasReloadAnimation: 1
   useEquipmentRecharge: 1
+  canSwitchIfNoCharges: 0
   equipmentRechargeTime: 2
   replenishAllEquipmentCharges: 0
   equipmentChargeFillsAmmo: 0
@@ -1243,12 +1244,13 @@ MonoBehaviour:
   chargeUntilFire: 0
   chargeOnlyUntilMinimum: 0
   fireOnRelease: 0
-  charging: 0
+  chargeCoroutineRunning: 0
   recoilParams: {fileID: 11400000, guid: bdd5dec6794a68d4ea8c989aebcfc910, type: 2}
+  isCurrentWeapon: 0
   poolStartCapacity: 50
   poolMaxCapacity: 500
   damageConfig: {fileID: 11400000, guid: 8fafd6135f529384bb5667b61a0b1c17, type: 2}
-  baseSpreadPerUnit: 0.1
+  baseSpreadPerUnit: 0
   maxInfluencedSpreadPerUnit: 0.1
   currentMovementInfluence: 0
   allowedFireModes: 02000000
@@ -1346,7 +1348,7 @@ MonoBehaviour:
     Layer: 0
     OriginatingState: 1029937312
     DestinationState: -193380071
-    TransitionDuration: 0.1351285
+    TransitionDuration: 0.09104681
     TriggerNameHash: -1907200461
     TransitionIndex: 0
   m_Animator: {fileID: 2326559616626249394}
@@ -1364,7 +1366,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weapon: {fileID: 5914302703086182660}
   applyRecoil: 1
-  playFireSound: 1
   playFireEffects: 1
   fireEffect: {fileID: 0}
   fireParticle: {fileID: 0}

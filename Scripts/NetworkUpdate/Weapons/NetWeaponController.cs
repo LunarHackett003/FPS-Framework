@@ -189,6 +189,8 @@ public class NetWeaponController : LunarNetScript
         nextWeaponIndex = newIndex;
 
         animator.UpdateAnimations();
+        if (CurrentWeapon != null)
+            CurrentWeapon.animator.UpdateAnimations();
         ShowWeapon(newIndex, false);
     }
     public virtual void WeaponIndexUpdated()

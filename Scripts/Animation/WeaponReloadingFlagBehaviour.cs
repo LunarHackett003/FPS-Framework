@@ -23,5 +23,9 @@ public class WeaponReloadingFlagBehaviour : WeaponAnimationBehaviourBase
         blocked = false;
         UpdateBlock();
     }
-    void UpdateBlock() => controller.fireBlockedByAnimation = blocked;
+    void UpdateBlock()
+    {
+        if(controller != null)
+            controller.fireBlockedByAnimation = blocked;
+    }
 }

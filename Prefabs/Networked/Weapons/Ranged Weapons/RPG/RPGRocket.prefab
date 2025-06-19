@@ -85,7 +85,7 @@ MonoBehaviour:
   radius: 0.02
   direction: {x: 0, y: 0, z: 0}
   velocity: 40
-  gravityMultiplier: 4
+  gravityMultiplier: 0.5
   renderersToHideOnHit:
   - {fileID: 6179358463563970571}
   terminatePrefab: {fileID: 194455338439950659, guid: a2fdaefc4e318db4e931af907887854a,

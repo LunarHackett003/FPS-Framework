@@ -9,40 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76f9fb033a385164dbc07c0aa34b46e9, type: 3}
+  m_Script: {fileID: 11500000, guid: 988576cebafbde7428ddcc24b76e3ed6, type: 3}
   m_Name: DefaultAnimSet
   m_EditorClassIdentifier: 
-  clips:
-  - targetClip: {fileID: 7400000, guid: 438cf89d5892ee2448206251db20dda8, type: 2}
-    characterClip: {fileID: 0}
-    weaponClip: {fileID: 0}
-  - targetClip: {fileID: 7400000, guid: b4dd95253c670e9428e605b16017d173, type: 2}
-    characterClip: {fileID: 0}
-    weaponClip: {fileID: 0}
-  - targetClip: {fileID: 7400000, guid: d4ccb8e53f7b6514db0225cb030cabf6, type: 2}
-    characterClip: {fileID: 0}
-    weaponClip: {fileID: 0}
-  - targetClip: {fileID: 7400000, guid: e82a9a2a95cfc904e82aae0e54d455c3, type: 2}
-    characterClip: {fileID: 0}
-    weaponClip: {fileID: 0}
-  - targetClip: {fileID: 7400000, guid: 1966759c9a621a641912c50077ad8fa9, type: 2}
-    characterClip: {fileID: 0}
-    weaponClip: {fileID: 0}
-  - targetClip: {fileID: 7400000, guid: 7ab4f5402fd260e4f9e720d295a5f048, type: 2}
-    characterClip: {fileID: 0}
-    weaponClip: {fileID: 0}
-  - targetClip: {fileID: 7400000, guid: d3939dcd22008324ab3fa261ace3e098, type: 2}
-    characterClip: {fileID: 0}
-    weaponClip: {fileID: 0}
-  - targetClip: {fileID: 7400000, guid: cfd11266d81c8464f94a9551539b84bd, type: 2}
-    characterClip: {fileID: 0}
-    weaponClip: {fileID: 0}
-  - targetClip: {fileID: 7400000, guid: f8d1f1e7bdaa1f04ebf12b603908cffd, type: 2}
-    characterClip: {fileID: 0}
-    weaponClip: {fileID: 0}
-  - targetClip: {fileID: 7400000, guid: b4e57c0ef2b72864a98db193f2a09822, type: 2}
-    characterClip: {fileID: 0}
-    weaponClip: {fileID: 0}
-  - targetClip: {fileID: 7400000, guid: 76f6485a9fc35754fa3a8c94c4a778ef, type: 2}
-    characterClip: {fileID: 0}
-    weaponClip: {fileID: 0}
+  clips: []

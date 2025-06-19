@@ -70,6 +70,10 @@ MonoBehaviour:
     m_InternalValue: 100
   maxHealth: 0
   receiveDamageFromTeamOrOwner: 0
+  damageableDiedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  rb: {fileID: 0}
   rootDamageable: {fileID: 3954094251548034127}
   damageMultiplier: 1
   isCritBox: 0
@@ -144,6 +148,10 @@ MonoBehaviour:
     m_InternalValue: 100
   maxHealth: 0
   receiveDamageFromTeamOrOwner: 0
+  damageableDiedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  rb: {fileID: 0}
   rootDamageable: {fileID: 3954094251548034127}
   damageMultiplier: 1
   isCritBox: 0
@@ -443,6 +451,10 @@ MonoBehaviour:
     m_InternalValue: 100
   maxHealth: 0
   receiveDamageFromTeamOrOwner: 0
+  damageableDiedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  rb: {fileID: 0}
   rootDamageable: {fileID: 3954094251548034127}
   damageMultiplier: 1
   isCritBox: 0
@@ -548,6 +560,10 @@ MonoBehaviour:
     m_InternalValue: 100
   maxHealth: 0
   receiveDamageFromTeamOrOwner: 0
+  damageableDiedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  rb: {fileID: 0}
   rootDamageable: {fileID: 3954094251548034127}
   damageMultiplier: 1
   isCritBox: 0
@@ -881,6 +897,10 @@ MonoBehaviour:
     m_InternalValue: 100
   maxHealth: 0
   receiveDamageFromTeamOrOwner: 0
+  damageableDiedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  rb: {fileID: 0}
   rootDamageable: {fileID: 3954094251548034127}
   damageMultiplier: 1
   isCritBox: 0
@@ -1066,6 +1086,10 @@ MonoBehaviour:
     m_InternalValue: 100
   maxHealth: 250
   receiveDamageFromTeamOrOwner: 0
+  damageableDiedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  rb: {fileID: 0}
   isDead:
     m_InternalValue: 0
   canRegenerateHealth: 1
@@ -1080,8 +1104,9 @@ MonoBehaviour:
   HealthModified:
     m_PersistentCalls:
       m_Calls: []
+  despawnAfterDeath: 0
+  despawnAfterDeathTime: 0
   motor: {fileID: 1611007650946771031}
-  bufferManager: {fileID: 6327532313127820386}
   weaponController: {fileID: 2927406344617015266}
   viewmodelCamera: {fileID: 3356232319739446214}
   allRenderers:
@@ -1179,13 +1204,8 @@ MonoBehaviour:
   weapons: []
   lastWeaponCount: 0
   weaponIndex:
-    m_AuthoritativeValue:
-      m_InternalValue: 0
-    StaleDataHandling: 1
-  nextWeaponIndex:
-    m_AuthoritativeValue:
-      m_InternalValue: 0
-    StaleDataHandling: 1
+    m_InternalValue: 0
+  nextWeaponIndex: 0
   currentWeapon: {fileID: 0}
   colliders:
   - {fileID: 5515138310644021310}
@@ -1222,7 +1242,6 @@ MonoBehaviour:
     type: 2}
   reloadInput: 0
   meleeInput: 0
-  weaponSwitchInput: 0
   player: {fileID: 3954094251548034127}
   crouchAccuracyMultiplier: 0.5
   weaponPositionOffset: {fileID: 4752557809316964030}
@@ -1317,6 +1336,10 @@ MonoBehaviour:
     m_InternalValue: 100
   maxHealth: 0
   receiveDamageFromTeamOrOwner: 0
+  damageableDiedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  rb: {fileID: 0}
   rootDamageable: {fileID: 3954094251548034127}
   damageMultiplier: 1
   isCritBox: 0
@@ -1422,6 +1445,10 @@ MonoBehaviour:
     m_InternalValue: 100
   maxHealth: 0
   receiveDamageFromTeamOrOwner: 0
+  damageableDiedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  rb: {fileID: 0}
   rootDamageable: {fileID: 3954094251548034127}
   damageMultiplier: 1
   isCritBox: 0
@@ -1496,6 +1523,10 @@ MonoBehaviour:
     m_InternalValue: 100
   maxHealth: 0
   receiveDamageFromTeamOrOwner: 0
+  damageableDiedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  rb: {fileID: 0}
   rootDamageable: {fileID: 3954094251548034127}
   damageMultiplier: 1
   isCritBox: 0
@@ -1570,6 +1601,10 @@ MonoBehaviour:
     m_InternalValue: 100
   maxHealth: 0
   receiveDamageFromTeamOrOwner: 0
+  damageableDiedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  rb: {fileID: 0}
   rootDamageable: {fileID: 3954094251548034127}
   damageMultiplier: 1
   isCritBox: 0
@@ -1700,6 +1735,10 @@ MonoBehaviour:
     m_InternalValue: 100
   maxHealth: 0
   receiveDamageFromTeamOrOwner: 0
+  damageableDiedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  rb: {fileID: 0}
   rootDamageable: {fileID: 3954094251548034127}
   damageMultiplier: 1
   isCritBox: 0
@@ -1774,6 +1813,10 @@ MonoBehaviour:
     m_InternalValue: 100
   maxHealth: 0
   receiveDamageFromTeamOrOwner: 0
+  damageableDiedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  rb: {fileID: 0}
   rootDamageable: {fileID: 3954094251548034127}
   damageMultiplier: 1
   isCritBox: 0
@@ -1848,6 +1891,10 @@ MonoBehaviour:
     m_InternalValue: 100
   maxHealth: 0
   receiveDamageFromTeamOrOwner: 0
+  damageableDiedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  rb: {fileID: 0}
   rootDamageable: {fileID: 3954094251548034127}
   damageMultiplier: 1
   isCritBox: 0
@@ -2005,6 +2052,10 @@ MonoBehaviour:
     m_InternalValue: 100
   maxHealth: 0
   receiveDamageFromTeamOrOwner: 0
+  damageableDiedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  rb: {fileID: 0}
   rootDamageable: {fileID: 3954094251548034127}
   damageMultiplier: 1
   isCritBox: 0
@@ -2237,6 +2288,10 @@ MonoBehaviour:
     m_InternalValue: 100
   maxHealth: 0
   receiveDamageFromTeamOrOwner: 0
+  damageableDiedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  rb: {fileID: 0}
   rootDamageable: {fileID: 3954094251548034127}
   damageMultiplier: 1
   isCritBox: 0
@@ -2683,6 +2738,10 @@ MonoBehaviour:
     m_InternalValue: 100
   maxHealth: 0
   receiveDamageFromTeamOrOwner: 0
+  damageableDiedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  rb: {fileID: 0}
   rootDamageable: {fileID: 3954094251548034127}
   damageMultiplier: 1
   isCritBox: 0
@@ -2757,6 +2816,10 @@ MonoBehaviour:
     m_InternalValue: 100
   maxHealth: 0
   receiveDamageFromTeamOrOwner: 0
+  damageableDiedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  rb: {fileID: 0}
   rootDamageable: {fileID: 3954094251548034127}
   damageMultiplier: 1
   isCritBox: 0
@@ -2831,6 +2894,10 @@ MonoBehaviour:
     m_InternalValue: 100
   maxHealth: 0
   receiveDamageFromTeamOrOwner: 0
+  damageableDiedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  rb: {fileID: 0}
   rootDamageable: {fileID: 3954094251548034127}
   damageMultiplier: 1
   isCritBox: 0
@@ -2905,6 +2972,10 @@ MonoBehaviour:
     m_InternalValue: 100
   maxHealth: 0
   receiveDamageFromTeamOrOwner: 0
+  damageableDiedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  rb: {fileID: 0}
   rootDamageable: {fileID: 3954094251548034127}
   damageMultiplier: 1
   isCritBox: 1
@@ -2979,6 +3050,10 @@ MonoBehaviour:
     m_InternalValue: 100
   maxHealth: 0
   receiveDamageFromTeamOrOwner: 0
+  damageableDiedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  rb: {fileID: 0}
   rootDamageable: {fileID: 3954094251548034127}
   damageMultiplier: 1
   isCritBox: 0
@@ -3163,6 +3238,10 @@ MonoBehaviour:
     m_InternalValue: 100
   maxHealth: 0
   receiveDamageFromTeamOrOwner: 0
+  damageableDiedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  rb: {fileID: 0}
   rootDamageable: {fileID: 3954094251548034127}
   damageMultiplier: 1
   isCritBox: 0
@@ -3347,6 +3426,10 @@ MonoBehaviour:
     m_InternalValue: 100
   maxHealth: 0
   receiveDamageFromTeamOrOwner: 0
+  damageableDiedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  rb: {fileID: 0}
   rootDamageable: {fileID: 3954094251548034127}
   damageMultiplier: 1
   isCritBox: 0
@@ -8520,7 +8603,7 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 9feec7067770cd340a1ed9157a53e303, type: 2}
-  m_CullingMode: 1
+  m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
@@ -8605,7 +8688,7 @@ MonoBehaviour:
     Layer: 0
     OriginatingState: 1029937312
     DestinationState: -193380071
-    TransitionDuration: 0.1351285
+    TransitionDuration: 0.09104681
     TriggerNameHash: -1907200461
     TransitionIndex: 0
   m_Animator: {fileID: 5786238750598794529}
