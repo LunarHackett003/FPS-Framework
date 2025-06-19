@@ -1016,7 +1016,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 2550889260
+  GlobalObjectIdHash: 786125874
   InScenePlacedSourceGlobalObjectIdHash: 786125874
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
@@ -1089,7 +1089,7 @@ MonoBehaviour:
   damageableDiedEvent:
     m_PersistentCalls:
       m_Calls: []
-  rb: {fileID: 0}
+  rb: {fileID: 7578074039436073281}
   isDead:
     m_InternalValue: 0
   canRegenerateHealth: 1

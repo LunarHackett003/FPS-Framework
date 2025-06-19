@@ -358,7 +358,7 @@ MonoBehaviour:
   spreadOnSecondary: 0
   attackSpreadIncrement: 0
   attackSpreadDecay: 0
-  baseAttackSpread: 0.1
+  baseAttackSpread: 0
   attackSpreadAmount: 0
   useAmmunition: 1
   ammoConsumeOnPrimary: 0
