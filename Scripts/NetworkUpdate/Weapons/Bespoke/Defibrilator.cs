@@ -39,13 +39,16 @@ public class Defibrilator : BaseNetWeapon
         if(IsOwner && chargeAmount >= 1 && primaryInput && CurrentAmmo.Value > 0 && !fired)
         {
             fired = true;
-            if (!IsServer)
-            {
-                PostAttackBehaviour();
-            }
             TryDefib_RPC(controller.fireOrigin.position, controller.fireOrigin.forward);
             TriggerAnimation(PRIMARYATTACK, TRIGGERTIMESHORT, true);
         }
+    }
+
+    protected override void PostAttackBehaviour()
+    {
+        onWeaponFired?.Invoke(chargeAmount);
+        PostAttackCharge();
+
     }
 
     [Rpc(SendTo.Server)]
@@ -60,6 +63,7 @@ public class Defibrilator : BaseNetWeapon
                     if (trophy.HitByQuickRevive(OwnerClientId))
                     {
                         Debug.Log("Defibrillated!");
+                        PostAttackBehaviour();
                     }
                 }
                 else if(hit.rigidbody.TryGetComponent(out NetPlayerEntity player))
@@ -67,11 +71,10 @@ public class Defibrilator : BaseNetWeapon
                     if (!NetworkPlayer.IsPlayerOnMyTeam(OwnerClientId, player.OwnerClientId))
                     {
                         player.ModifyHealth(-defibDamageOnEnemyHit, this, DamageSourceType.weapon, false);
+                        PostAttackBehaviour();
                     }
                 }
-                Debug.Log("Defibrillated!");
             }
         }
-        PostAttackBehaviour();
     }
 }

@@ -4,7 +4,7 @@ using System.Linq;
 using Unity.Netcode.Components;
 using UnityEngine;
 
-public class NetWeaponAnimator : LunarNetScript
+public class BaseAnimatable : LunarNetScript
 {
     [SerializeField] internal Animator animator;
     [SerializeField] internal NetworkAnimator networkAnimator;
@@ -67,14 +67,7 @@ public class NetWeaponAnimator : LunarNetScript
             animator.Update(Time.fixedDeltaTime);
         }
     }
-    public void ChangeEquipAnimation()
-    {
-        if (aoc != null)
-        {
-            clipOverrides["ChangeWeapon"] =
-                controller.CurrentWeapon.animationSet.clips.First(x => x.targetClip.name == "ChangeWeapon").characterClip;
-        }
-    }
+
 
     public virtual void SetAnimationBool(string parameter, bool value)
     {

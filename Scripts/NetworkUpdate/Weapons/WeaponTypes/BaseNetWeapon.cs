@@ -17,7 +17,7 @@ public class BaseNetWeapon : LunarNetScript
     internal bool primaryInput, secondaryInput, primaryPressed, secondaryPressed;
 
     [SerializeField] internal NetWeaponController controller;
-    [SerializeField] internal NetWeaponAnimator animator;
+    [SerializeField] internal BaseAnimatable animator;
     [SerializeField] internal bool canCrit;
     [SerializeField] internal float critMultiplier;
 
@@ -201,43 +201,60 @@ public class BaseNetWeapon : LunarNetScript
     }
     protected virtual void PostAttackBehaviour()
     {
+        onWeaponFired?.Invoke(chargeAmount);
+        PostAttackSpread();
+        PostAttackCharge();
+        CheckEquipmentCharge();
+        UpdateAmmo();
+        if(useAmmunition && IsOwner)
+        {
+            CheckReloadOrPhase();
+        }
+    }
+    protected void PostAttackSpread()
+    {
         if (IsOwner || IsServer)
         {
-            Debug.Log("post attack behaviour", gameObject);
             if (useAttackSpread)
             {
                 attackSpreadAmount = Mathf.Clamp01(attackSpreadAmount + attackSpreadIncrement);
             }
-            if (useAmmunition)
+        }
+    }
+    protected void CheckEquipmentCharge()
+    {
+        if (IsServer && useEquipmentRecharge)
+        {
+            equipmentCharges.Value--;
+        }
+    }
+    protected void UpdateAmmo()
+    {
+        if(useAmmunition && IsServer)
+        {
+            CurrentAmmo.Value -= ammoPerShot;
+        }
+    }
+    protected void CheckReloadOrPhase()
+    {
+        if (CurrentAmmo.Value <= 0)
+        {
+            if (useAmmoPhases && currentAmmoPhase < ammoPhases)
             {
-                if (IsServer)
-                {
-                    Debug.Log("decremented ammo");
-                    CurrentAmmo.Value -= ammoPerShot;
-                    if (useEquipmentRecharge)
-                    {
-                        equipmentCharges.Value--;
-                    }
-                }
-                if (CurrentAmmo.Value <= 0)
-                {
-                    if (useAmmoPhases && currentAmmoPhase < ammoPhases)
-                    {
-                        TriggerAnimation(AMMOPHASE, TRIGGERTIMELONG, true);
-                    }
-                    if(hasReloadAnimation && (!useEquipmentRecharge || equipmentCharges.Value > 0))
-                    {
-                        TriggerAnimation(EMPTYRELOAD, TRIGGERTIMESHORT, true);
-                    }
-                }
+                TriggerAnimation(AMMOPHASE, TRIGGERTIMELONG, true);
+            }
+            else if (hasReloadAnimation && (!useEquipmentRecharge || equipmentCharges.Value > 0))
+            {
+                TriggerAnimation(EMPTYRELOAD, TRIGGERTIMESHORT, true);
             }
         }
+    }
+    protected void PostAttackCharge()
+    {
         if ((primaryUsesCharge || secondaryUsesCharge) && resetChargeOnFire)
         {
             chargeAmount = 0;
         }
-
-        onWeaponFired?.Invoke(chargeAmount);
     }
 
     protected virtual void UpdateAmmoCharges()

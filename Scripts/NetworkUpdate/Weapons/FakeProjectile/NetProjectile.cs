@@ -81,7 +81,7 @@ public class NetProjectile : LunarNetScript
             projectileAlive = true;
 
 
-            GetComponent<NetworkObject>().SpawnWithOwnership(weapon.OwnerClientId);
+            NetworkObject.SpawnWithOwnership(weapon.OwnerClientId);
 
             SetAliveState_RPC(true);
         }

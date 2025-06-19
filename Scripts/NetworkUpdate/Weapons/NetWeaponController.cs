@@ -31,7 +31,7 @@ public class NetWeaponController : LunarNetScript
     internal float aimAmount;
     internal bool switchingWeapons;
 
-    [SerializeField] internal NetWeaponAnimator animator;
+    [SerializeField] internal BaseAnimatable animator;
 
     [SerializeField] internal bool hideWeapons;
     internal bool weaponsHiddenLast;

@@ -31,7 +31,7 @@ public class NetPlayerEntity : NetEntity
 
     internal NetworkObject reviveItemInstance;
 
-    internal NetWeaponAnimator Animator => weaponController.animator;
+    internal BaseAnimatable Animator => weaponController.animator;
 
     public ParticleSystem deathParticle;
 
@@ -56,6 +56,8 @@ public class NetPlayerEntity : NetEntity
     public bool isFriendly;
     bool lastDead;
 
+    bool hookedUpdateMaterials;
+
     public override void OnNetworkSpawn()
     {
         base.OnNetworkSpawn();
@@ -64,24 +66,17 @@ public class NetPlayerEntity : NetEntity
 
         playerHitboxes = GetComponentsInChildren<NetHitbox>();
 
-
-        NetworkPlayer.netPlayers[NetworkManager.LocalClientId].teamIndex.OnValueChanged += UpdateMaterials;
-
-        UpdateMaterials(0, NetworkPlayer.netPlayers[OwnerClientId].teamIndex.Value);
         if (IsOwner)
         {
             if(GameplayCanvas.Instance != null)
                 GameplayCanvas.player = this;
             Camera.main.GetUniversalAdditionalCameraData().cameraStack.Add(viewmodelCamera);
-
-            
-
         }
 
         weaponController.Initialise();
     }
 
-    void UpdateMaterials(int previous, int current)
+    void UpdateMaterials()
     {
 
         Debug.Log("Updating materials on player", gameObject);
@@ -97,6 +92,35 @@ public class NetPlayerEntity : NetEntity
         }
     }
 
+    void SubscribeMaterialUpdate()
+    {
+        try
+        {
+            NetworkPlayer.netPlayers[OwnerClientId].onTeamUpdated += UpdateMaterials;
+            NetworkPlayer.netPlayers[NetworkManager.LocalClientId].onTeamUpdated += UpdateMaterials;
+
+            UpdateMaterials();
+        }
+        catch (System.Exception)
+        {
+            hookedUpdateMaterials = false;
+            throw;
+        }
+        finally
+        {
+            hookedUpdateMaterials = true;
+        }
+    }
+
+    public override void LUpdate()
+    {
+        base.LUpdate();
+
+        if (!hookedUpdateMaterials)
+        {
+            SubscribeMaterialUpdate();
+        }
+    }
     public override void LTimestep()
     {
         base.LTimestep();
@@ -235,8 +259,6 @@ public class NetPlayerEntity : NetEntity
             reviveItemInstance.Despawn();
         }
 
-        NetworkPlayer.netPlayers[OwnerClientId].teamIndex.OnValueChanged -= UpdateMaterials;
-
         base.OnNetworkDespawn();
     }
 
@@ -268,6 +290,7 @@ public class NetPlayerEntity : NetEntity
             if(reviveItemInstance == null)
             {
                 reviveItemInstance = NetworkManager.SpawnManager.InstantiateAndSpawn(playerReviveItemPrefab, OwnerClientId, position: transform.position);
+                reviveItemInstance.GetComponent<ReviveTrophy>().targetClientID = OwnerClientId;
                 Debug.Log($"Spawned trophy - revive item instance null: {reviveItemInstance == null}");
             }
         }

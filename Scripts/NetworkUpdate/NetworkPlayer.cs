@@ -26,6 +26,9 @@ public class NetworkPlayer : LunarNetScript
 
     public TestLoadoutWeaponCollection weaponList;
 
+    public delegate void TeamUpdated();
+    public TeamUpdated onTeamUpdated;
+
     public static bool GetPlayerTeam(ulong clientID, out int index)
     {
         if (netPlayers.TryGetValue(clientID, out NetworkPlayer npe))
@@ -87,6 +90,7 @@ public class NetworkPlayer : LunarNetScript
         {
             playersOnTeams[OwnerClientId] = current;
         }
+        onTeamUpdated?.Invoke();
     }
 
     public void DetermineTeamForPlayer()
