@@ -59,57 +59,76 @@ public class Explosion : ProjectileHitEffect
         visualEffects.PlayVFX(true);
 
 
-
-        //Only the server should run explosion logic.
         if (!IsServer)
             return;
 
 
-        if (maxHits <= 0 || rayCount <= 0 || !doExplosion)
+        Collider[] array = new Collider[maxHits];
+
+        int hits = Physics.OverlapSphereNonAlloc(transform.position, blastRadius, array, blastMask, QueryTriggerInteraction.Ignore);
+        if (hits == 0)
             return;
 
-
-        QueryParameters qp = new QueryParameters()
+        NativeArray<RaycastCommand> explodeRays = new(hits, Allocator.TempJob);
+        QueryParameters qp = new()
         {
-            hitTriggers = QueryTriggerInteraction.Ignore,
-            layerMask = blastMask,
             hitBackfaces = false,
-            hitMultipleFaces = false
+            hitMultipleFaces = false,
+            hitTriggers = QueryTriggerInteraction.Ignore,
+            layerMask = blastMask
         };
-        NativeArray<RaycastCommand> commands = new(rayCount, Allocator.TempJob);
-        for (int i = 0; i < rayCount; i++)
+        for (int i = 0; i < array.Length; i++)
         {
-            if (useLimitedAngle && blastAngle != 180)
+            Collider item = array[i];
+            //If a collider is null, we've probably hit the end, right?
+            if (item == null)
+                return;
+            //if we do NOT use a limited blast angle OR 
+            if (!useLimitedAngle || Vector3.Angle(transform.position - item.ClosestPoint(transform.position), transform.rotation * blastBaseDirection) < blastAngle)
             {
-                Vector3 direction = transform.rotation * RandomBlastDirection;
-                commands[i] = new(transform.position - direction * 0.02f, direction, qp, blastRadius);
-            }
-            else
-            {
-                Vector3 direction = Random.onUnitSphere;
-                commands[i] = new(transform.position - direction * 0.02f, direction, qp, blastRadius);
+                for (int j = 0; j < 5; j++)
+                {
+                    Vector3[] directions = new Vector3[]
+                    {
+                        item.bounds.center - transform.position,
+                        (item.bounds.center + (0.5f * item.bounds.extents.y * item.transform.up)) - transform.position,
+                        (item.bounds.center - (0.5f * item.bounds.extents.y * item.transform.up)) - transform.position,
+                        (item.bounds.center + (0.5f * item.bounds.extents.x * item.transform.right)) - transform.position,
+                        (item.bounds.center + (0.5f * item.bounds.extents.x * item.transform.right)) - transform.position,
+                    };
+                    explodeRays[i + j] = new()
+                    {
+                        direction = directions[j].normalized,
+                        distance = blastRadius * 1.1f,
+                        from = transform.position - (explodeRays[i + j].direction * 0.1f),
+                        queryParameters = qp,
+                    };
+                }
             }
         }
-        NativeArray<RaycastHit> hits = new(rayCount, Allocator.TempJob);
-        JobHandle job = RaycastCommand.ScheduleBatch(commands, hits, 1);
+        NativeArray<RaycastHit> explodeHits = new(explodeRays.Length, Allocator.TempJob);
+        JobHandle job = RaycastCommand.ScheduleBatch(explodeRays, explodeHits, 5);
         job.Complete();
-
-        for (int i = 0; i < hits.Length; i++)
+        for (int i = 0; i < hits; i++)
         {
-            RaycastHit hit = hits[i];
-            //if we do not hit a collider, move on
-            if (hit.collider == null)
+            int offset = i * hits;
+            for (int j = 0; j < 5; j++)
             {
-                continue;
-            }
-            if (hit.collider.attachedRigidbody != null)
-            {
+                if (explodeHits[offset + j].collider == null || explodeHits[offset + j].rigidbody == null)
+                {
+                    continue;
+                }
+                RaycastHit hit = explodeHits[offset + j];
+
                 float rangeLerp = blastFalloff.Evaluate(Mathf.InverseLerp(0, blastRadius, hit.distance));
                 float damage = Mathf.Lerp(damagePointBlank, damageAtEdge, rangeLerp);
                 float force = Mathf.Lerp(forcePointBlank, forceAtEdge, rangeLerp);
                 if (hitData.ContainsKey(hit.collider))
                 {
-
+                    ExplosionHitData data = hitData[hit.collider];
+                    data.damageAccumulated += damage;
+                    data.forceAccumulated += force;
+                    hitData[hit.collider] = data;
                 }
                 else
                 {
@@ -121,36 +140,21 @@ public class Explosion : ProjectileHitEffect
                 }
             }
 
-        }
-
-        if(hitData.Count > 0)
-        {
-            foreach (KeyValuePair<Collider, ExplosionHitData> item in hitData)
+            if(hitData.Count > 0)
             {
-                if (item.Key.attachedRigidbody)
+                foreach (KeyValuePair<Collider, ExplosionHitData> item in hitData)
                 {
-                    item.Key.attachedRigidbody.AddExplosionForce(item.Value.forceAccumulated, transform.position, blastRadius, 0.5f, ForceMode.Impulse);
-                    
-                    if(item.Key.attachedRigidbody.TryGetComponent(out NetDamageable nd))
+                    if (item.Key.TryGetComponent(out NetDamageable d))
                     {
-                        if(nd.receiveDamageFromTeamOrOwner || canDamageFriendlies || !NetworkPlayer.IsPlayerOnMyTeam(OwnerClientId, nd.OwnerClientId) || OwnerClientId == nd.OwnerClientId)
-                        {
-                            nd.ModifyHealth(item.Value.damageAccumulated, source, damageSourceType, false);
-                            if (!nd.IsOwnedByServer)
-                            {
-
-                            }
-
-                        }
+                        d.ModifyHealth(item.Value.damageAccumulated);
+                        d.ApplyForceToOwner_RPC(transform.position - item.Key.ClosestPoint(transform.position) * item.Value.forceAccumulated, transform.position);
                     }
-
                 }
             }
+            hitData.Clear();
+            explodeHits.Dispose();
+            explodeRays.Dispose();
         }
-
-        hits.Dispose();
-        commands.Dispose();
-
 
         if (despawnAfterExplosion)
         {

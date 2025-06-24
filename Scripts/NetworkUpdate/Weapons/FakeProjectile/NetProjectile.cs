@@ -68,7 +68,7 @@ public class NetProjectile : LunarNetScript
             ignoredColliders = new(weapon.ignoredColliders);
 
             this.weapon = weapon;
-            damageMultiplier = charge != 0 ? Mathf.Lerp(weapon.minChargeDamageMultiplier, weapon.maxChargeDamageMultiplier, charge) : 1;
+            damageMultiplier = charge != 0 ? Mathf.Lerp(weapon.ammoType.minChargeDamageMultiplier, weapon.ammoType.maxChargeDamageMultiplier, charge) : 1;
             transform.position = weapon.fireOrigin.position;
             transform.forward = direction;
             this.direction = direction;

@@ -25,7 +25,7 @@ public class RangedNetWeapon : BaseNetWeapon
 
     NetProjectile CreatePooledItem()
     {
-        NetProjectile np = Instantiate(ProjectilePrefab, fireOrigin.position, Quaternion.identity, null).GetComponent<NetProjectile>();
+        NetProjectile np = Instantiate(ammoType.ProjectilePrefab, fireOrigin.position, Quaternion.identity, null).GetComponent<NetProjectile>();
         np.gameObject.hideFlags = HideFlags.HideInHierarchy;
         return np;
     }
@@ -36,8 +36,7 @@ public class RangedNetWeapon : BaseNetWeapon
         {
             trace.projectileEffect.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
         }
-        if (trace.projectileVFX != null)
-            trace.projectileVFX.PlayVFX(false);
+        trace.projectileVFX?.PlayVFX(false);
         trace.gameObject.SetActive(false);
     }
     void TakeFromPool(NetProjectile trace)
@@ -104,18 +103,17 @@ public class RangedNetWeapon : BaseNetWeapon
     [Tooltip("Does the weapon's charge affect its fire rate?")] public bool chargeAffectsFireRate = false;
     [Tooltip("")] public float minChargeFireRateMultiplier = 0.4f;
     [Tooltip("")] public float maxChargeFireRateMultiplier = 1f;
-    [Tooltip("")] public float minChargeDamageMultiplier = 0.2f;
-    [Tooltip("")] public float maxChargeDamageMultiplier = 0.2f;
+
+
+    public AmmoTypeScriptable ammoType;
 
     [SerializeField] internal float currentFireCooldown;
     protected bool burstFiring = false;
 
 
     public Transform fireOrigin;
-    [Tooltip("How many rays a rweapon will shoot when firing.")]
-    public int fireIterations = 1;
 
-    public GameObject ProjectilePrefab;
+
 
     public override float GetDamage(float distance = 0)
     {
@@ -148,7 +146,7 @@ public class RangedNetWeapon : BaseNetWeapon
     }
     public virtual void ServerFire(Quaternion rotation, Vector3 origin)
     {
-        for (int i = 0; i < fireIterations; i++)
+        for (int i = 0; i < ammoType.fireIterations; i++)
         {
             ProjectilePool.Get(out NetProjectile v);
             Debug.Log("Fired weapon");

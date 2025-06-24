@@ -1,40 +1,49 @@
 using UnityEngine;
 
-public class Debuff
+public enum DebuffType : int
 {
-    public float timeRemaining;
-    public bool tickDownTime;
-    public NetEntity entity;
-    public virtual void UpdateDebuff()
-    {
-        if (tickDownTime)
-        {
-            timeRemaining -= Time.fixedDeltaTime;
-        }
-    }
+    none = 0,
+    burn = 1,
+    stun = 2,
+    poision = 3
 }
 
-public class DamageOverTime : Debuff
+
+
+[System.Serializable]
+public class Debuff
 {
+    public string name;
+
+
+    public float timeRemaining;
+    public bool tickDownTime;
+
+    public NetEntity entity;
+
+    public DebuffType type;
+
+    public bool useDamageOverTime;
     public float damagePerTick = 10;
     public bool increaseDamageOverTime = false;
     public float damageAddPerTick = 1f;
     public float damageMultPertick = 1.011f;
     public float damageInterval = 0.5f;
     protected float currentInterval;
-    public override void UpdateDebuff()
+
+    public bool useStun;
+    public float moveSpeedModifier = 0.5f, lookSpeedModifier = 0.5f;
+    public bool canJump = false, canSprint = false;
+    public bool restrictSlotsWhileDebuffed;
+    public bool[] slotAllowed = new bool[]
     {
-        base.UpdateDebuff();
-        currentInterval += Time.fixedDeltaTime;
-        if(currentInterval > damageInterval)
+        true, true, true, true
+    };
+    public virtual void UpdateDebuff()
+    {
+        if (tickDownTime)
         {
-            currentInterval = 0;
-            entity.currentHealth.Value -= damagePerTick;
-            if (increaseDamageOverTime)
-            {
-                damagePerTick += damageAddPerTick;
-                damagePerTick *= damageMultPertick;
-            }
+            timeRemaining -= Time.fixedDeltaTime;
         }
     }
 }
