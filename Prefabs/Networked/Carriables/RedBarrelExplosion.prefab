@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 550917973
+  GlobalObjectIdHash: 2560883223
   InScenePlacedSourceGlobalObjectIdHash: 0
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
@@ -70,7 +70,7 @@ MonoBehaviour:
   explodeOnSpawn: 0
   visualEffects:
   - {fileID: 6623915505407748998}
-  blastRadius: 1
+  blastRadius: 2
   blastFalloff:
     serializedVersion: 2
     m_Curve:
@@ -95,21 +95,24 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  damagePointBlank: 50
+  damagePointBlank: -50
   damageAtEdge: 0
   forcePointBlank: 50
   forceAtEdge: 0
   blastMask:
     serializedVersion: 2
-    m_Bits: 65
+    m_Bits: 64
   doExplosion: 1
-  maxHits: 50
-  rayCount: 100
+  explodeOnlyOnce: 1
+  exploded: 0
+  debuffsToApply: []
   useLimitedAngle: 0
   blastBaseDirection: {x: 0, y: 1, z: 0}
   blastAngle: 17.5
   canDamageFriendlies: 1
   damageSourceType: 0
+  despawnAfterExplosion: 0
+  explodeDespawnTime: 0
 --- !u!1001 &6105193324881001650
 PrefabInstance:
   m_ObjectHideFlags: 0

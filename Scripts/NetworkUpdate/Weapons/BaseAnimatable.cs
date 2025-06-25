@@ -97,6 +97,14 @@ public class BaseAnimatable : LunarNetScript
         }
     }
 
+    public virtual void SetAnimationInt(string parameter, int value)
+    {
+        if (!IsOwner || animator == null)
+            return;
+
+        animator.SetInteger(parameter, value);
+    }
+
     public virtual void TriggerAnimation(string trigger, float time, bool reset = false)
     {
         if (!IsOwner)

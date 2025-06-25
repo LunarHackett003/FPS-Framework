@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageFalloffStart: 100
   damageFalloffEnd: 100
-  maxDamage: -150
-  minDamage: -150
+  maxDamage: -10
+  minDamage: -10
   damageFalloffCurve:
     serializedVersion: 2
     m_Curve:

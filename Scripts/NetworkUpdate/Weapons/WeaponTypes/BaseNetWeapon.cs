@@ -6,9 +6,9 @@ using UnityEngine;
 public class BaseNetWeapon : LunarNetScript
 {
 
-    public const string PRIMARYATTACK = "Primary", SECONDARYATTACK = "Secondary", AMMOPHASE = "AmmoPhase", EMPTYRELOAD = "EmptyReload", PARTIALRELOAD = "TacReload",
-        FIRESWITCHUP = "FireSwitchUp", FIRESWITCHDOWN = "FireSwitchDown", COUNTEDRELOAD = "CountedReload", MANUALACTION = "ManualAction", CHANGEWEAPON = "ChangeWeapon",
-        CHARGEAMOUNT = "Charge", CHARGING = "Charging";
+    public const string PRIMARYATTACK = "Primary", SECONDARYATTACK = "Secondary", AMMOPHASE = "AmmoPhase", RELOAD = "FullReload", EMPTYRELOAD = "EmptyReload", 
+        COUNTEDRELOADINDEX = "CountedReloadIndex", FIRESWITCHUP = "FireSwitchUp", FIRESWITCHDOWN = "FireSwitchDown", COUNTEDRELOAD = "CountedReload", 
+        MANUALACTION = "ManualAction", CHANGEWEAPON = "ChangeWeapon", CHARGEAMOUNT = "Charge", CHARGING = "Charging";
     public const float TRIGGERTIMETINY = 0.1f, TRIGGERTIMESHORT = 0.4f, TRIGGERTIMELONG = 0.8f;
 
     public string displayName = "Networked Weapon";
@@ -39,9 +39,10 @@ public class BaseNetWeapon : LunarNetScript
     [SerializeField] internal bool useAmmoPhases;
     [SerializeField] internal int ammoPhases;
     [SerializeField] internal int currentAmmoPhase;
-    [SerializeField] internal float partialReloadTime, emptyReloadTime;
 
-    [SerializeField] internal bool hasReloadAnimation;
+    public ReloadConfigScriptable reloadConfig;
+    public float reloadTime;
+    public bool isCountedReload;
 
     [SerializeField] internal bool useEquipmentRecharge;
     [SerializeField] internal bool canSwitchIfNoCharges;
@@ -94,6 +95,8 @@ public class BaseNetWeapon : LunarNetScript
     public virtual bool Charging => chargeCoroutineRunning || ChargeInput || chargeHoldFrame;
 
     public bool isCurrentWeapon;
+
+    public ReloadInfo currentReloadInfo;
 
     /// <summary>
     /// Calculates the damage that should be dealt at the supplied distance.
@@ -237,15 +240,27 @@ public class BaseNetWeapon : LunarNetScript
     }
     protected void CheckReloadOrPhase()
     {
-        if (CurrentAmmo.Value <= 0)
+        //if (CurrentAmmo.Value <= 0)
+        //{
+        //    if (useAmmoPhases && currentAmmoPhase < ammoPhases)
+        //    {
+        //        TriggerAnimation(AMMOPHASE, TRIGGERTIMELONG, true);
+        //    }
+        //    else if (hasReloadAnimation && (!useEquipmentRecharge || equipmentCharges.Value > 0))
+        //    {
+        //        TriggerAnimation(EMPTYRELOAD, TRIGGERTIMESHORT, true);
+        //    }
+        //}
+
+        if(CurrentAmmo.Value <= 0)
         {
-            if (useAmmoPhases && currentAmmoPhase < ammoPhases)
+            if(useAmmoPhases && currentAmmoPhase < ammoPhases)
             {
                 TriggerAnimation(AMMOPHASE, TRIGGERTIMELONG, true);
             }
-            else if (hasReloadAnimation && (!useEquipmentRecharge || equipmentCharges.Value > 0))
+            else if (reloadConfig != null && (!useEquipmentRecharge || equipmentCharges.Value > 0))
             {
-                TriggerAnimation(EMPTYRELOAD, TRIGGERTIMESHORT, true);
+                PlayReloadAnimation();
             }
         }
     }
@@ -322,6 +337,38 @@ public class BaseNetWeapon : LunarNetScript
         SetBool(CHARGING, Charging);
     }
 
+    public virtual void PlayReloadAnimation()
+    {
+        //Find the weapon's reload info for its current ammo value
+        ReloadInfo ri = reloadConfig.GetReloadInfo(CurrentAmmo.Value);
+        reloadTime = ri.reloadTime;
+
+
+        SetBool(EMPTYRELOAD, CurrentAmmo.Value == 0);
+
+        TriggerAnimation(ri.reloadTrigger, TRIGGERTIMESHORT, true);
+    }
+    public virtual void UpdateCountedReload()
+    {
+
+        if(CurrentAmmo.Value == maxAmmo - 1)
+        {
+            SetInt(COUNTEDRELOADINDEX, -1);
+        }
+        else
+        {
+            ReloadInfo ri = reloadConfig.GetReloadInfo(CurrentAmmo.Value);
+            reloadTime = ri.reloadTime;
+
+            //We shouldn't be here if we're not using a counted reload, so uh... yeah
+            if (ri.isCountedReload)
+            {
+                SetInt(COUNTEDRELOADINDEX, ri.countedReloadIndex);
+            }
+        }
+
+    }
+
 
     internal virtual void TriggerAnimation(string parameter, float time, bool reset = false)
     {
@@ -344,7 +391,16 @@ public class BaseNetWeapon : LunarNetScript
         if (animator != null)
             animator.SetAnimationBool(parameter, value);
     }
+    internal virtual void SetInt(string parameter, int value)
+    {
+        if (!isCurrentWeapon)
+            return;
 
+        if (controller != null && controller.animator != null)
+            controller.animator.SetAnimationInt(parameter, value);
+        if (animator != null)
+            animator.SetAnimationInt(parameter, value);
+    }
     internal virtual void SetFloat(string parameter, float value)
     {
         if (!isCurrentWeapon)

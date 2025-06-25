@@ -20,8 +20,7 @@ public class WeaponReloadBehaviour : WeaponAnimationBehaviourBase
         }
 
         Debug.Log($"reload time : {reloadAtTime}, state duration: {stateInfo.length}", animator.gameObject);
-        reloadAtTime = emptyReload ? controller.CurrentWeapon.emptyReloadTime : controller.CurrentWeapon.partialReloadTime;
-        normalisedTimeForReload = Mathf.InverseLerp(0, stateInfo.length, reloadAtTime);
+        normalisedTimeForReload = Mathf.InverseLerp(0, stateInfo.length, weapon.reloadTime);
 
         reloaded = false;
     }
@@ -35,6 +34,12 @@ public class WeaponReloadBehaviour : WeaponAnimationBehaviourBase
             reloaded = true;
             weapon.ReloadWeapon(true);
             weapon.onWeaponReloaded?.Invoke();
+
+
+            if (weapon.isCountedReload)
+            {
+                weapon.UpdateCountedReload();
+            }
         }
     }
     public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)

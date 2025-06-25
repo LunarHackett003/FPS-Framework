@@ -942,9 +942,8 @@ MonoBehaviour:
   blastMask:
     serializedVersion: 2
     m_Bits: 65
-  doExplosion: 1
-  maxHits: 10
-  rayCount: 10
+  doExplosion: 0
+  debuffsToApply: []
   useLimitedAngle: 1
   blastBaseDirection: {x: 0, y: 1, z: 0}
   blastAngle: 23.7
@@ -1170,7 +1169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 3482293842
+  GlobalObjectIdHash: 1998122467
   InScenePlacedSourceGlobalObjectIdHash: 3482293842
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
@@ -1265,13 +1264,9 @@ MonoBehaviour:
   chargeAffectsFireRate: 0
   minChargeFireRateMultiplier: 0.4
   maxChargeFireRateMultiplier: 1
-  minChargeDamageMultiplier: 0.2
-  maxChargeDamageMultiplier: 0.2
+  ammoType: {fileID: 11400000, guid: 8c12718e3d929a24395d66cb808fdbe0, type: 2}
   currentFireCooldown: 0
   fireOrigin: {fileID: 4490385423063287825}
-  fireIterations: 1
-  ProjectilePrefab: {fileID: 998377066548516954, guid: df2116d0acf67ef42a18791000d18a7d,
-    type: 3}
 --- !u!114 &3892073070634034066
 MonoBehaviour:
   m_ObjectHideFlags: 0

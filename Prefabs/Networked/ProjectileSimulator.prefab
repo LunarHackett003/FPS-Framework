@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3644418406885586667}
   - component: {fileID: 2986219441327546097}
   - component: {fileID: -3342717857647144712}
+  - component: {fileID: 7866511969771886942}
   m_Layer: 0
   m_Name: ProjectileSimulator
   m_TagString: Untagged
@@ -46,7 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 902077380
+  GlobalObjectIdHash: 2228919941
   InScenePlacedSourceGlobalObjectIdHash: 902077380
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
@@ -85,12 +86,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debuffTemplates:
-  - name: none
+  - name: burn
     timeRemaining: 0
     tickDownTime: 0
     entity: {fileID: 0}
-    type: 0
-    useDamageOverTime: 0
+    type: 1
+    useDamageOverTime: 1
     damagePerTick: 10
     increaseDamageOverTime: 0
     damageAddPerTick: 1
@@ -99,7 +100,62 @@ MonoBehaviour:
     useStun: 0
     moveSpeedModifier: 0.5
     lookSpeedModifier: 0.5
+    canJump: 1
+    canSprint: 1
+    restrictSlotsWhileDebuffed: 0
+    slotAllowed: 01010101
+  - name: stun
+    timeRemaining: 0
+    tickDownTime: 0
+    entity: {fileID: 0}
+    type: 2
+    useDamageOverTime: 1
+    damagePerTick: 10
+    increaseDamageOverTime: 0
+    damageAddPerTick: 1
+    damageMultPertick: 1.011
+    damageInterval: 0.5
+    useStun: 1
+    moveSpeedModifier: 0.5
+    lookSpeedModifier: 0.5
     canJump: 0
     canSprint: 0
     restrictSlotsWhileDebuffed: 0
     slotAllowed: 01010101
+  - name: poision
+    timeRemaining: 0
+    tickDownTime: 0
+    entity: {fileID: 0}
+    type: 3
+    useDamageOverTime: 1
+    damagePerTick: 2
+    increaseDamageOverTime: 1
+    damageAddPerTick: 1
+    damageMultPertick: 1.011
+    damageInterval: 0.5
+    useStun: 0
+    moveSpeedModifier: 0.5
+    lookSpeedModifier: 0.5
+    canJump: 1
+    canSprint: 1
+    restrictSlotsWhileDebuffed: 0
+    slotAllowed: 01010101
+--- !u!114 &7866511969771886942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3872040461031065316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6571236436f068f459e87bf9d0763b4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHits: 50
+  damageableMask:
+    serializedVersion: 2
+    m_Bits: 2112
+  obstructionMask:
+    serializedVersion: 2
+    m_Bits: 65
