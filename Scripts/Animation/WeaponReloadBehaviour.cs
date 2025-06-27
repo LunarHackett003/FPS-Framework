@@ -7,8 +7,12 @@ public class WeaponReloadBehaviour : WeaponAnimationBehaviourBase
     public float reloadAtTime = 1;
     public bool emptyReload;
 
+    [SerializeField]
     protected bool reloaded;
+    [SerializeField]
     protected float normalisedTimeForReload = 0.5f;
+
+    
     public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         base.OnStateEnter(animator, stateInfo, layerIndex);
@@ -18,17 +22,25 @@ public class WeaponReloadBehaviour : WeaponAnimationBehaviourBase
             weapon.onReloadEvent?.Invoke(emptyReload, false);
             return;
         }
-
-        Debug.Log($"reload time : {reloadAtTime}, state duration: {stateInfo.length}", animator.gameObject);
         normalisedTimeForReload = Mathf.InverseLerp(0, stateInfo.length, weapon.reloadTime);
-
         reloaded = false;
     }
     public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         base.OnStateUpdate(animator, stateInfo, layerIndex);
 
-        if (!reloaded && stateInfo.normalizedTime >= normalisedTimeForReload)
+        if (!canExecute)
+            return;
+
+        //Hopefully this will reset the loop functionality :/
+        if(LoopTime< normalisedTimeForReload && reloaded)
+        {
+            Debug.Log("Reset reload state on state machine");
+            normalisedTimeForReload = Mathf.InverseLerp(0, stateInfo.length, weapon.reloadTime);
+            reloaded = false;
+        }
+
+        if (!reloaded && LoopTime >= normalisedTimeForReload)
         {
             Debug.Log("attempted to reload weapon", weapon);
             reloaded = true;
@@ -46,7 +58,7 @@ public class WeaponReloadBehaviour : WeaponAnimationBehaviourBase
     {
         base.OnStateExit(animator, stateInfo, layerIndex);
 
-        if (!canExecute && stateInfo.normalizedTime < 0.9f)
+        if (!canExecute && LoopTime < 0.9f)
         {
             weapon.onReloadEvent?.Invoke(emptyReload, true);
             return;

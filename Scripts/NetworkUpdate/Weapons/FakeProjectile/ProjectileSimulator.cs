@@ -271,7 +271,6 @@ public class ProjectileSimulator : LunarNetScript
     void ProcessHit(ref NetProjectile np, RaycastHit hit)
     {
 
-        Debug.Log($"Hit {hit.collider.gameObject.name} with {np.weapon.displayName}", hit.collider.gameObject);
         //If we've hit something valid, then we want to do the maths on that bit
         QueryColliderAndAddStats(np, hit, hit.collider);
         //move the projectile to the hit point
@@ -318,7 +317,6 @@ public class ProjectileSimulator : LunarNetScript
                 if (item.Key.TryGetComponent(out NetDamageable d))
                 {
                     bool canDamage = d.receiveDamageFromTeamOrOwner || !NetworkPlayer.IsPlayerOnMyTeam(item.Value.sourceClientID, d.OwnerClientId);
-                    Debug.Log($"can damage: {canDamage}");
                     if (canDamage)
                     {    
                         d.ModifyHealth(item.Value.damageAccumulated, item.Value.weapon, DamageSourceType.weapon, false);

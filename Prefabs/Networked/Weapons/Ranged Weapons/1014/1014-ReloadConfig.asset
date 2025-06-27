@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7143ceb6b5b19534cb53cef8809fd30e, type: 3}
+  m_Name: 1014-ReloadConfig
+  m_EditorClassIdentifier: 
+  reloads:
+  - ammoToTriggerAbove: 0
+    ammoToTriggerBelow: 1
+    reloadTime: 0.7
+    reloadFully: 0
+    amountToReload: 1
+    isCountedReload: 1
+    countedReloadIndex: 0
+    reloadTrigger: CountedReload
+  - ammoToTriggerAbove: 0
+    ammoToTriggerBelow: 5
+    reloadTime: 0.4
+    reloadFully: 0
+    amountToReload: 1
+    isCountedReload: 1
+    countedReloadIndex: 0
+    reloadTrigger: CountedReload
+  - ammoToTriggerAbove: 6
+    ammoToTriggerBelow: 6
+    reloadTime: 0.5
+    reloadFully: 0
+    amountToReload: 0
+    isCountedReload: 1
+    countedReloadIndex: -1
+    reloadTrigger: CountedReload

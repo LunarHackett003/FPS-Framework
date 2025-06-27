@@ -37,8 +37,8 @@ public class NetPlayerWeaponController : NetWeaponController
 
         if (IsOwner)
         {
-            primaryInput = InputManager.PrimaryInput && !FireBlocked;
-            secondaryInput = InputManager.SecondaryInput && !FireBlocked;
+            primaryInput = InputManager.PrimaryInput && !FireBlocked && !reloading;
+            secondaryInput = InputManager.SecondaryInput;
 
 
             weaponSwitchInput = InputManager.WeaponSwitchInput;
@@ -58,7 +58,7 @@ public class NetPlayerWeaponController : NetWeaponController
                 }
                 if (reloadInput)
                 {
-                    if ((!CurrentWeapon.useEquipmentRecharge || CurrentWeapon.equipmentCharges.Value > 0) && 
+                    if (!reloading && (!CurrentWeapon.useEquipmentRecharge || CurrentWeapon.equipmentCharges.Value > 0) && 
                         (CurrentWeapon.useAmmunition && CurrentWeapon.reloadConfig && (CurrentWeapon.CurrentAmmo.Value < CurrentWeapon.maxAmmo) 
                         || (CurrentWeapon.useAmmoPhases && CurrentWeapon.currentAmmoPhase != 0)))
                     {
@@ -75,7 +75,7 @@ public class NetPlayerWeaponController : NetWeaponController
 
 
 
-        player.motor.aiming = secondaryInput && !player.motor.sliding;
+        player.motor.aiming = secondaryInput && !player.motor.sliding && (!reloading || CurrentWeapon.aimParams.canAimWhileReloading);
 
         if (IsOwner)
         {

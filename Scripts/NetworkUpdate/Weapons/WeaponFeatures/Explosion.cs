@@ -61,13 +61,17 @@ public class Explosion : ProjectileHitEffect
     [Rpc(SendTo.Everyone)]
     public virtual void Explode_RPC()
     {
+        if (exploded)
+            return;
+
         visualEffects.PlayVFX(true);
 
         if(explodeOnlyOnce)
             exploded = true;
 
-        if (!IsServer || !doExplosion || exploded)
+        if (!IsServer || !doExplosion)
             return;
+
 
         Collider[] array = new Collider[30];
         int hits = Physics.OverlapSphereNonAlloc(transform.position, blastRadius, array, blastMask, QueryTriggerInteraction.Ignore);

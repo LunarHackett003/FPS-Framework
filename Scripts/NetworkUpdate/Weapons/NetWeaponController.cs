@@ -45,6 +45,8 @@ public class NetWeaponController : LunarNetScript
     internal float recoilShotClearTime;
     internal int recoilShotsFired;
 
+    public bool reloading;
+
     public virtual float Spread(float value) => value * (1 - aimAmount);
 
     public override void OnNetworkSpawn()

@@ -309,10 +309,15 @@ public class BaseNetWeapon : LunarNetScript
         primaryPressed = false;
         animatedFirePending = false;
 
+        if (isCountedReload)
+        {
+            UpdateCountedReload();
+        }
+
         if (IsServer)
         {
             //Determine how much of our equipment charge we're consuming to recharge this item
-            int reloadAmount = useEquipmentRecharge ? Mathf.Min(equipmentCharges.Value, maxAmmo) : maxAmmo;
+            float reloadAmount = useEquipmentRecharge ? Mathf.Min(equipmentCharges.Value, maxAmmo) : (currentReloadInfo.reloadFully ? maxAmmo : CurrentAmmo.Value + currentReloadInfo.amountToReload);
             //And then reload our weapon
             CurrentAmmo.Value = reloadAmount;
         }
@@ -340,32 +345,23 @@ public class BaseNetWeapon : LunarNetScript
     public virtual void PlayReloadAnimation()
     {
         //Find the weapon's reload info for its current ammo value
-        ReloadInfo ri = reloadConfig.GetReloadInfo(CurrentAmmo.Value);
-        reloadTime = ri.reloadTime;
-
+        UpdateCountedReload();
 
         SetBool(EMPTYRELOAD, CurrentAmmo.Value == 0);
 
-        TriggerAnimation(ri.reloadTrigger, TRIGGERTIMESHORT, true);
+        TriggerAnimation(currentReloadInfo.reloadTrigger, TRIGGERTIMESHORT, true);
     }
     public virtual void UpdateCountedReload()
     {
+        currentReloadInfo = reloadConfig.GetReloadInfo(CurrentAmmo.Value);
+        reloadTime = currentReloadInfo.reloadTime;
 
-        if(CurrentAmmo.Value == maxAmmo - 1)
+        //We shouldn't be here if we're not using a counted reload, so uh... yeah
+        if (currentReloadInfo.isCountedReload)
         {
-            SetInt(COUNTEDRELOADINDEX, -1);
+            SetInt(COUNTEDRELOADINDEX, currentReloadInfo.countedReloadIndex);
         }
-        else
-        {
-            ReloadInfo ri = reloadConfig.GetReloadInfo(CurrentAmmo.Value);
-            reloadTime = ri.reloadTime;
-
-            //We shouldn't be here if we're not using a counted reload, so uh... yeah
-            if (ri.isCountedReload)
-            {
-                SetInt(COUNTEDRELOADINDEX, ri.countedReloadIndex);
-            }
-        }
+        
 
     }
 

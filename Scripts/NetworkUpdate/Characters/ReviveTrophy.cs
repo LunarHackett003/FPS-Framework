@@ -21,6 +21,8 @@ public class ReviveTrophy : InteractableObject
     {
         base.OnNetworkSpawn();
 
+        targetClientID = OwnerClientId;
+
         NetPlayerEntity.playersByID[targetClientID].reviveItemInstance = NetworkObject;
         NetworkPlayer.netPlayers[OwnerClientId].onTeamUpdated += UpdateTeam;
         NetworkPlayer.netPlayers[NetworkManager.LocalClientId].onTeamUpdated += UpdateTeam;

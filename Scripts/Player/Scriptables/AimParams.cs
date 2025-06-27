@@ -6,6 +6,8 @@ public class AimParams : ScriptableObject
     [Tooltip("This value is subtracted from the Base FOV when it is in effect.")] public float aimFOV = -10, altAimFOV = -5;
     [Tooltip("How quickly, per degree of FOV in the transition, your view moves towards the target fov.")] public float aimSpeed = 15;
 
+    [Tooltip("Can you aim this weapon while reloading?")] public bool canAimWhileReloading;
+
     [Tooltip("The linear offset to apply to the rweapon when aiming")] public Vector3 baseAimPositionOffset = Vector3.zero;
     [Tooltip("The scale for the linear offset when aiming")] public Vector3 aimedWeaponPositionScale = Vector3.one;
     [Tooltip("The linear offset to apply to the rweapon when aiming")] public Vector3 aimPositionOffsetAngled = Vector3.zero;

@@ -95,9 +95,9 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  damagePointBlank: -50
-  damageAtEdge: 0
-  forcePointBlank: 50
+  damagePointBlank: -30
+  damageAtEdge: -4
+  forcePointBlank: 0.1
   forceAtEdge: 0
   blastMask:
     serializedVersion: 2

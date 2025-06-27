@@ -1,0 +1,78 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65e91554a9cb4bf43896b48549e91499, type: 3}
+  m_Name: M1014_RecoilParams
+  m_EditorClassIdentifier: 
+  recoilMultiplierCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: -0.54791737
+      outSlope: -0.54791737
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.11210191
+    - serializedVersion: 3
+      time: 1
+      value: 0.7
+      inSlope: -0.20365602
+      outSlope: -0.20365602
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.089171946
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  maxRecoilShots: 50
+  recoilShotClearTime: 1
+  recoilDecay: 9
+  minLinearRecoil: {x: -0.1, y: -0.1, z: -0.5}
+  maxLinearRecoil: {x: 0.1, y: 0.1, z: -0.5}
+  minAngularRecoil: {x: -1, y: -1, z: -1}
+  maxAngularRecoil: {x: 1, y: 1, z: 1}
+  aimedLinearRecoilScale: {x: 1, y: 1, z: 1}
+  aimedAngularRecoilScale: {x: 0.1, y: 0.1, z: 0.1}
+  recoilSnappiness: 15
+  recoilSpeed: 15
+  tempAimPitchPerShot: 1
+  permanentAimPitchPerShot: -0.5
+  tempAimPitchDecay: 4
+  tempAimPitchSnappiness: 6
+  chargeAffectsRecoil: 0
+  recoilChargeInfluence:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.2
+      inSlope: 0.8
+      outSlope: 0.8
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0.8
+      outSlope: 0.8
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4

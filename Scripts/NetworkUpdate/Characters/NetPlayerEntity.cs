@@ -269,13 +269,10 @@ public class NetPlayerEntity : NetEntity
         deathParticle.Play();
 
         capsule.enabled = false;
-        Debug.Log("disabled collider");
 
         ToggleRenderers(false);
-        Debug.Log("disabled renderers");
 
         ToggleHitboxes(false);
-        Debug.Log("disabled hitboxes");
 
 
         Debug.Log($"Player died at time: {System.DateTime.Now}");
@@ -311,7 +308,6 @@ public class NetPlayerEntity : NetEntity
     public virtual void Revive(ulong helperClientID, bool quickRevive)
     {
         capsule.enabled = true;
-        Debug.Log($"enabled capsule - {capsule.enabled}");
 
         ToggleRenderers(true);
 
@@ -345,12 +341,9 @@ public class NetPlayerEntity : NetEntity
 
     public void ToggleRenderers(bool enabled)
     {
-
-        Debug.Log($"toggling renderers - {enabled}");
         for (int i = 0; i < allRenderers.Length; i++)
         {
             allRenderers[i].enabled = enabled;
-            Debug.Log($"toggled hitboxes - {allRenderers[i].enabled}");
         }
     }
     public void ToggleHitboxes(bool enabled)
@@ -358,7 +351,6 @@ public class NetPlayerEntity : NetEntity
         for (int i = 0; i < playerHitboxes.Length; i++)
         {
             playerHitboxes[i].enabled = enabled;
-            Debug.Log($"toggled hitboxes - {playerHitboxes[i].enabled}");
         }
     }
 
