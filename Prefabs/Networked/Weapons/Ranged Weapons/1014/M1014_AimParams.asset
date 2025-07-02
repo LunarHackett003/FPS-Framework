@@ -16,11 +16,11 @@ MonoBehaviour:
   altAimFOV: -5
   aimSpeed: 4
   canAimWhileReloading: 0
-  baseAimPositionOffset: {x: 0, y: 0.14, z: 0}
-  aimedWeaponPositionScale: {x: -1, y: -0.9, z: 0}
+  baseAimPositionOffset: {x: 0, y: 0.146, z: 0}
+  aimedWeaponPositionScale: {x: -1, y: -1, z: 0}
   aimPositionOffsetAngled: {x: 0, y: 0, z: 0}
-  aimRotationReduction: 0.7
-  aimRotationOffset: {x: 0.004363436, y: 0, z: 0, w: -0.99999046}
+  aimRotationReduction: 1
+  aimRotationOffset: {x: 0, y: 0, z: 0, w: 1}
   crouchPositionOffset: {x: 0, y: -0.03, z: 0}
   crouchLerpCurve:
     serializedVersion: 2
@@ -70,5 +70,5 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  crouchRotationOffset: {x: 0, y: 0, z: 0.1305262, w: 0.9914449}
+  crouchRotationOffset: {x: 0, y: 0, z: 0, w: 1}
   viewmodelFOV: -17.5

@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 2228919941
+  GlobalObjectIdHash: 902077380
   InScenePlacedSourceGlobalObjectIdHash: 902077380
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
@@ -95,7 +95,7 @@ MonoBehaviour:
     damagePerTick: 10
     increaseDamageOverTime: 0
     damageAddPerTick: 1
-    damageMultPertick: 1.011
+    damageMultPerTick: 1.011
     damageInterval: 0.5
     useStun: 0
     moveSpeedModifier: 0.5
@@ -109,11 +109,11 @@ MonoBehaviour:
     tickDownTime: 0
     entity: {fileID: 0}
     type: 2
-    useDamageOverTime: 1
+    useDamageOverTime: 0
     damagePerTick: 10
     increaseDamageOverTime: 0
     damageAddPerTick: 1
-    damageMultPertick: 1.011
+    damageMultPerTick: 1.011
     damageInterval: 0.5
     useStun: 1
     moveSpeedModifier: 0.5
@@ -131,7 +131,7 @@ MonoBehaviour:
     damagePerTick: 2
     increaseDamageOverTime: 1
     damageAddPerTick: 1
-    damageMultPertick: 1.011
+    damageMultPerTick: 1.011
     damageInterval: 0.5
     useStun: 0
     moveSpeedModifier: 0.5
@@ -159,3 +159,4 @@ MonoBehaviour:
   obstructionMask:
     serializedVersion: 2
     m_Bits: 65
+  explosionInsetFactor: 0.01

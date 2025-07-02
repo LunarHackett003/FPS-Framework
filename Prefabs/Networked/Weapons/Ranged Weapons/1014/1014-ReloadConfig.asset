@@ -21,7 +21,7 @@ MonoBehaviour:
     isCountedReload: 1
     countedReloadIndex: 0
     reloadTrigger: CountedReload
-  - ammoToTriggerAbove: 0
+  - ammoToTriggerAbove: 1
     ammoToTriggerBelow: 5
     reloadTime: 0.4
     reloadFully: 0

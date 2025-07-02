@@ -37,18 +37,12 @@ public class NetPlayerWeaponController : NetWeaponController
 
         if (IsOwner)
         {
-            primaryInput = InputManager.PrimaryInput && !FireBlocked && !reloading;
+            primaryInput = InputManager.PrimaryInput && !FireBlocked ;
             secondaryInput = InputManager.SecondaryInput;
 
 
             weaponSwitchInput = InputManager.WeaponSwitchInput;
             reloadInput = InputManager.ReloadInput;
-
-
-            if (primaryInput != lastPrimary || secondaryInput != lastSecondary || reloadInput != lastReload)
-            {
-                SendInputToServer_RPC(primaryInput, secondaryInput, reloadInput);
-            }
 
             if (CurrentWeapon != null && !FireBlocked)
             {
@@ -70,6 +64,11 @@ public class NetPlayerWeaponController : NetWeaponController
                     }
                     reloadInput = false;
                 }
+                secondaryInput &= (!reloading || CurrentWeapon.aimParams.canAimWhileReloading);
+            }
+            if (primaryInput != lastPrimary || secondaryInput != lastSecondary || reloadInput != lastReload)
+            {
+                SendInputToServer_RPC(primaryInput, secondaryInput, reloadInput);
             }
         }
 

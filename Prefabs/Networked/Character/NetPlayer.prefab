@@ -1016,7 +1016,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 786125874
+  GlobalObjectIdHash: 2550889260
   InScenePlacedSourceGlobalObjectIdHash: 786125874
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
@@ -1098,6 +1098,7 @@ MonoBehaviour:
   regenerationRate: 50
   immuneToDamage: 0
   receivesDebuffs: 0
+  debuffs: []
   movementModifier: 0
   rotationModifier: 0
   damageMultiplier: 1
@@ -1106,6 +1107,16 @@ MonoBehaviour:
       m_Calls: []
   despawnAfterDeath: 0
   despawnAfterDeathTime: 0
+  debuffData:
+  - debuffType: 0
+    debuffVFX: {fileID: 0}
+    active: 0
+  - debuffType: 0
+    debuffVFX: {fileID: 0}
+    active: 0
+  - debuffType: 0
+    debuffVFX: {fileID: 0}
+    active: 0
   motor: {fileID: 1611007650946771031}
   weaponController: {fileID: 2927406344617015266}
   viewmodelCamera: {fileID: 3356232319739446214}
@@ -1240,6 +1251,7 @@ MonoBehaviour:
   currentRecoilLinear: {x: 0, y: 0, z: 0}
   defaultRecoilParams: {fileID: 11400000, guid: f1a76fcb6beb003449352ffb1fedaebd,
     type: 2}
+  reloading: 0
   reloadInput: 0
   meleeInput: 0
   player: {fileID: 3954094251548034127}
@@ -8642,41 +8654,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TransitionStateInfoList:
-  - IsCrossFadeExit: 0
-    Layer: 0
-    OriginatingState: -118708495
-    DestinationState: 1562257414
-    TransitionDuration: 0.065812886
-    TriggerNameHash: 1562257414
-    TransitionIndex: 1
-  - IsCrossFadeExit: 0
-    Layer: 0
-    OriginatingState: -118708495
-    DestinationState: 1159952127
-    TransitionDuration: 0.30583507
-    TriggerNameHash: -1047320328
-    TransitionIndex: 2
-  - IsCrossFadeExit: 0
-    Layer: 0
-    OriginatingState: 2081823275
-    DestinationState: 2071894089
-    TransitionDuration: 0.065812886
-    TriggerNameHash: 2071894089
-    TransitionIndex: 0
-  - IsCrossFadeExit: 0
-    Layer: 0
-    OriginatingState: 2081823275
-    DestinationState: 1562257414
-    TransitionDuration: 0.065812886
-    TriggerNameHash: 1562257414
-    TransitionIndex: 1
-  - IsCrossFadeExit: 0
-    Layer: 0
-    OriginatingState: 2081823275
-    DestinationState: 1159952127
-    TransitionDuration: 0.19881755
-    TriggerNameHash: -1047320328
-    TransitionIndex: 3
   - IsCrossFadeExit: 0
     Layer: 0
     OriginatingState: 613635489

@@ -27,7 +27,7 @@ public class Debuff
     public float damagePerTick = 10;
     public bool increaseDamageOverTime = false;
     public float damageAddPerTick = 1f;
-    public float damageMultPertick = 1.011f;
+    public float damageMultPerTick = 1.011f;
     public float damageInterval = 0.5f;
     protected float currentInterval;
 
@@ -39,11 +39,54 @@ public class Debuff
     {
         true, true, true, true
     };
-    public virtual void UpdateDebuff()
+
+    public virtual void InitialiseDebuff(DebuffStats statsIn)
+    {
+        //If DebuffStats.addDuration is true, we'll extend the time of this by n seconds.
+        timeRemaining = statsIn.addDuration ? (timeRemaining + statsIn.duration) : statsIn.duration;
+        if (timeRemaining > 0)
+            tickDownTime = true;
+    }
+
+    public virtual void UpdateDebuff(bool isServer)
     {
         if (tickDownTime)
         {
             timeRemaining -= Time.fixedDeltaTime;
+            currentInterval += Time.fixedDeltaTime;
+            if(currentInterval > damageInterval)
+            {
+                currentInterval %= damageInterval;
+                if(isServer)
+                    DamageOverTime();
+            }
+            if (isServer)
+                ProcessEffects();
+
+            if (timeRemaining < 0)
+                tickDownTime = false;
         }
+
+    }
+    protected virtual void DamageOverTime()
+    {
+        entity.ModifyHealth(-damagePerTick);
+        if (increaseDamageOverTime)
+        {
+            damagePerTick += damageAddPerTick;
+            damagePerTick *= damageMultPerTick;
+        }
+    }
+
+    protected virtual void ProcessEffects()
+    {
+        for (int i = 0; i < slotAllowed.Length; i++)
+        {
+            entity.slotsAllowed[i] &= slotAllowed[i];
+        }
+        entity.rotationModifier += lookSpeedModifier;
+        entity.movementModifier += moveSpeedModifier;
+        entity.canJump &= canJump;
+        entity.canSprint &= canSprint;
     }
 }
